@@ -1,0 +1,132 @@
+%% start of file `moderncvcollection.sty'.
+%% Copyright 2013-2015 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+%-------------------------------------------------------------------------------
+%                identification
+%-------------------------------------------------------------------------------
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{moderncvcollection}[2015/07/28 v2.0.0 moderncv collections]
+
+
+%-------------------------------------------------------------------------------
+%                requirements
+%-------------------------------------------------------------------------------
+
+
+\RequirePackage{ifthen}
+
+
+%-------------------------------------------------------------------------------
+%                code
+%-------------------------------------------------------------------------------
+
+% creates a new collection
+% usage: \collectionnew{<collection name>}
+\newcommand*{\collectionnew}[1]{%
+  \newcounter{collection@#1@count}}
+
+% adds an item to a collection
+% usage: \collectionadd[<optional key>]{<collection name>}{<item to add>}
+\newcommand*{\collectionadd}[3][]{%
+  \expandafter\def\csname collection@#2@item\roman{collection@#2@count}\endcsname{#3}%
+  \if\relax\noexpand#1\relax% if #1 is empty
+    \else\expandafter\def\csname collection@#2@key\roman{collection@#2@count}\endcsname{#1}\fi%
+  \stepcounter{collection@#2@count}}
+
+% returns the number of items in a collection
+% usage: \collectioncount{<collection name>}
+\newcommand*{\collectioncount}[1]{%
+  \value{collection@#1@count}}
+
+% gets an item from a collection
+% usage: \collectiongetitem{<collection name>}{<element id>}
+% where <element id> is an integer between 0 and (collectioncount-1)
+\newcommand*{\collectiongetitem}[2]{%
+  \csname collection@#1@item\romannumeral #2\endcsname}
+
+% gets a key from a collection
+% usage: \collectiongetkey{<collection name>}{<element id>}
+% where <element id> is an integer between 0 and (collectioncount-1)
+\newcommand*{\collectiongetkey}[2]{%
+  \csname collection@#1@key\romannumeral #2\endcsname}
+
+% loops through a collection and perform the given operation on every element
+% usage: \collectionloop{<collection name>}{<operation sequence>}
+% where <operation sequence> is the code sequence to be evaluated for each collection item,
+%   code which can refer to \collectionloopid, \collectionloopkey, \collectionloopitem and
+%   \collectionloopbreak
+\newcounter{collection@iterator}
+\newcommand*{\collectionloopbreak}{\let\iterate\relax}
+\newcommand*{\collectionloop}[2]{%
+  \setcounter{collection@iterator}{0}%
+  \loop\ifnum\value{collection@iterator}<\value{collection@#1@count}%
+    \def\collectionloopid{\arabic{collection@iterator}}%
+    \def\collectionloopitem{\collectiongetitem{#1}{\collectionloopid}}%
+    \def\collectionloopkey{\collectiongetkey{#1}{\collectionloopid}}%
+    #2%
+    \stepcounter{collection@iterator}%
+    \repeat}
+
+% loops through a collection and finds the (first) element matching the given key
+% usage: \collectionfindbykey{<collection name>}{key>}
+\newcommand*{\collectionfindbykey}[2]{%
+  \collectionloop{#1}{%
+    \ifthenelse{\equal{\collectionloopkey}{#2}}{\collectionloopitem\collectionloopbreak}{}}}
+
+
+
+
+
+% \newcommand*{\collectionbox}[2][\makeheaddetailssymbol]{% TODO: use \@initializecommand, which requires modifying its definition to handle mandatory and optional arguments
+%   \if@firstCollElement%
+%     \savebox{\makeheaddetailstempbox}{\usebox{\makeheaddetailsbox}#2}%
+%   \else%
+%     \savebox{\makeheaddetailstempbox}{\usebox{\makeheaddetailsbox}#1#2}\fi%
+%   \settowidth{\makeheaddetailsboxwidth}{\usebox{\makeheaddetailstempbox}}%
+%   \ifnum\makeheaddetailsboxwidth<\makeheaddetailswidth%
+%     \savebox{\makeheaddetailsbox}{\usebox{\makeheaddetailstempbox}}%
+%     \@firstmakeheaddetailselementfalse%
+%   \else%
+%     \flushmakeheaddetails\\\null% \null is required as there is no box on the line after \\, so glue such as \hfill (and leaders) disappear; this is in contrast to after \par, where the next line starts with an indent box (even after \noindent)
+%     \savebox{\makeheaddetailsbox}{#2}%
+%     \savebox{\makeheaddetailstempbox}{#2}%
+%     \settowidth{\makeheaddetailsboxwidth}{\usebox{\makeheaddetailsbox}}%
+%     \@firstmakeheaddetailselementfalse\fi}
+
+
+% \newcommand{\makeCollectionBox}[1]{%  arguments: output box, collection, key, separator
+%     \newsavebox{\#1}
+%     \savebox{\#1}{
+%         % \def\@tmp{}%
+%         % \collectionloop{#2}{% the key holds the social type (=symbol command prefix), the item holds the link
+%             % \protected@edef\socialsdetails{\socialsdetails\protect\csname\collectionloopkey #3\endcsname\collectionloopitem #4}%
+%         % \socialsdetails
+%         % asd\\asd\\qwe\\asd
+%         % asd
+%         % }
+%     }
+% }
+
+% \newcommand*{\makeCollectionBox}[4]{%  arguments: output box, collection, key, separator
+%     \newsavebox{\socialsdetailsBox}
+%     \savebox{\socialsdetailsBox}{
+%         \def\socialsdetails{}%
+%         \collectionloop{socials}{% the key holds the social type (=symbol command prefix), the item holds the link
+%             \protected@edef\socialsdetails{\socialsdetails\protect\csname\collectionloopkey socialsymbol\endcsname\collectionloopitem~~{\rmfamily\textbullet}~~}}%
+%         \socialsdetails
+%         % asd\\asd\\qwe\\asd
+%         % asd
+%     }
+% }
+
+
+
+\endinput
+
+
+%% end of file `moderncvcollection.cls'.

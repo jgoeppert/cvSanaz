@@ -1,0 +1,41 @@
+
+\def\protein{1}
+\def\kristallographie{0}
+
+\section{Berufserfahrung}
+%\subsection{Vocational}
+
+\cventry{07/2017 --- heute }{Wissenschaftliche Mitarbeiterin (Promotion)}{Institut für Organische Chemie, Albert-Ludwigs Universität Freiburg}{}{}{}
+\cvlistitem{Selbstständige Planung und Organisation des fortgeschrittenen Praktikums in organischer Chemie für Lehramt-Studenten}
+
+\cvitem{}{\bfseries Molekularbiologie}
+% \cvlistitem{Ortsspezifische Mutagenese durch PCR}
+% \ifthenelse{\equal{\marketing}{1}}{
+% \cvlistitem{Agarose-Gelelektrophorese}
+% \cvlistitem{DNA-Extraktion}
+% \cvlistitem{Transformation und Kultivierung von E.coli}
+
+% }{}
+\cvitem{}{\bfseries Proteinreinigung}
+\ifthenelse{\equal{\protein}{1}}{
+    \cvlistitem{Chromatographie mit Äkta (IMAC, IEX, SEC)}
+    \cvlistitem{Bestimmung der Proteinkonzentration }
+    \cvlistitem{SDS-Page Elektrophorese}
+}{}
+% \cvitem{}{\bfseries Proteinkristallographie}
+\ifthenelse{\equal{\kristallographie}{1}}{
+    \cvitem{}{\bfseries Proteinkristallographie}
+    \cvlistitem{Proteinkristallisation}
+    \cvlistitem{Kristalle fischen}
+    \cvlistitem{Datensätze sammeln}
+    \cvlistitem{Datensätze durch CCP4 und COOT prozessieren}
+    \cvlistitem{3D-Abbildungen mit Pymol erstellen}
+}{
+    \cvitem{}{\bfseries Proteinkristallographie --- Auswertung (CCP4, COOT) \& Aufbereitung (Pymol)}
+
+}
+\cventry{10/2014 --- 10/2015}{Chemielaborexpertin}{Patan Jame Factory (Textilfabrik), Ghaemshahr, Iran}{}{}{}
+
+\cvlistitem{Test von Färbeprozessen (Farb- \& Stoffkombinationen) für die Produktion}
+
+
