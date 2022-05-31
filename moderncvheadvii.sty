@@ -48,8 +48,10 @@
 % styles
 \renewcommand*{\titlestyle}[1]{{\titlefont\textcolor{color1}{\textbf #1}}}
 % \renewcommand*{\cvtitlestyle}[1]{{\cvtitlefont\cvtextcolor{color1}{\textbf #1}}}
-% \newcommand*{\cvtitlestyle}[1]{{\cvtitlefont\cvtextcolor{color1}{\textbf #1}}}
-\newcommand*{\cvtitlestyle}[1]{{{\textbf #1}}}
+\newcommand*{\cvtitlestyle}[1]{#1}
+\renewcommand*{\cvtitlestyle}[1]{\textcolor{color1}{\textbf{#1}}}
+% \renewcommand*{\cvtitlestyle}[1]{{{\textbf #1}}} 
+% \renewcommand*{\cvtitlestyle}[1]{#1}
 \renewcommand*{\namestyle}[1]{{\namefont\textcolor{color2}{\textbf #1}}}
 % \renewcommand*{\namestyle}[1]{{\namefont\textcolor{color0}{#1}}}
 % \renewcommand*{\titlestyle}[1]{{\titlefont\textcolor{color2}{#1}}}
@@ -195,7 +197,7 @@
   % opening
 
 %   \textbf{\@lettertitle ~als \@stelle}\\[.25em]
-  \cvtitlestyle{\@lettertitle ~als \@stelle}\\[.25em]
+\cvtitlestyle{\@lettertitle ~als \@stelle}\\[.25em]
 
   \raggedright%
   \@opening\\[1.5em]%
