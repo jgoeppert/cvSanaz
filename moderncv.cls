@@ -79,6 +79,7 @@
 % if... then... else... constructs
 \RequirePackage{ifthen}
 % TODO: move to xifthen and \isempty{<arg>} instead of \equal{<arg>}{}
+% \RequirePackage{xifthen}
 
 % color
 \RequirePackage[table]{xcolor}
@@ -154,7 +155,8 @@
           \newlength{\pagenumberwidth}%
           \settowidth{\pagenumberwidth}{\color{color2}\addressfont\itshape\strut\thepage/\pageref{lastpage}}%
           \fancypagestyle{plain}{%
-            \fancyfoot[r]{\parbox[b]{\pagenumberwidth}{\color{color2}\pagenumberfont\strut\thepage/\pageref{lastpage}}}}% the parbox is required to ensure alignment with a possible center footer (e.g., as in the casual style)
+            % \fancyfoot[r]{\parbox[b]{\pagenumberwidth}{\color{color2}\pagenumberfont\strut\thepage/\pageref{lastpage}}}}% the parbox is required to ensure alignment with a possible center footer (e.g., as in the casual style)
+            \fancyfoot[r]{\parbox[b]{\pagenumberwidth}{\color{color2}\pagenumberfont\strut  }}}% the parbox is required to ensure alignment with a possible center footer (e.g., as in the casual style)
           \pagestyle{plain}}{}}\fi}%
   \AtEndDocument{\label{lastpage}}}
 \pagestyle{plain}
@@ -764,7 +766,7 @@
 % makes the letter title
 % usage: \makelettertitle
 \newcommand*{\makelettertitle}{%
-  \makeletterhead%
+  \makeletterhead%  
   \makeletterfoot%
   }
 \newcommand*{\makeletterhead}{}
