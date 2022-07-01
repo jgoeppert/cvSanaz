@@ -8,21 +8,31 @@
 \newcommand{\stelleText}{}
 \newcommand{\firma}{}
 \newcommand{\adresse}{}
+\newcommand{\anschrift}{}
 \newcommand{\anrede}{}
 \newcommand{\kontakt}{none}
 
-\renewcommand{\kontakt}{none}
+
+\renewcommand{\kontakt}{ASD}
 
 
 \renewcommand{\stelleText}{Biochemikerin für Proteinanalytik}
 \renewcommand{\firma}{Phadia GmbH‌}
+\renewcommand{\anschrift}{Munzinger Straß‌e 7\\79111 Freiburg im Breisgau}
 
-% \ifthenelse{\kontakt{}}} { 
-    \renewcommand{\adresse}{Munzinger Straß‌e 7\\79111 Freiburg im Breisgau}
+
+\ifthenelse{ \equal{\kontakt} {none}}
+{ 
+    \renewcommand{\adresse}{\anschrift}
     \renewcommand{\anrede}{Sehr geehrte Damen und Herren}
-% }{
+}
+{
+    \renewcommand{\adresse}{\kontakt \\ \anschrift}
+    \renewcommand{\anrede}{Sehr geehrte Damen und Herren}
+
+}
+% {
 % \renewcommand{\adresse}{\kontakt \\Munzinger Straße 7\\79111 Freiburg im Breisgau}
 % \newcommand{\anrede}{Sehr geehrte Damen und Herren}
-% }
 
 ‌‌
