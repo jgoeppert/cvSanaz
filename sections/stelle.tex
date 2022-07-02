@@ -4,21 +4,45 @@
 % \stelle{Chemiker - Prüfleitung HPLC, LCMS (m/w/d) --- Referenznumer PLHPLC22}
 \stelle{Biologe, Biotechnologe, Biochemiker - Proteinanalytik, GMP (m/w/d)}
 
+% \stelle{Oligonucleotid Produktion}
 
-\newcommand{\stelleText}{}
+
+
 \newcommand{\firma}{}
 \newcommand{\adresse}{}
 \newcommand{\anschrift}{}
 \newcommand{\anrede}{}
+\newcommand{\geschlecht}{}
 \newcommand{\kontakt}{none}
+\newcommand{\typ}{}
+\newcommand{\stelleText}{}
+
+
+\renewcommand{\typ}{forschung}
+% \renewcommand{\typ}{produktion}
+% \renewcommand{\typ}{management}
+
+
 
 
 \renewcommand{\kontakt}{ASD}
+\renewcommand{\geschlecht}{Herr}
+
+
+
+% \collectionnew{kontakt}
+% \collectionadd[anrede]{kontakt}{none}
+% \collectionadd[name]{kontakt}{none}
+
 
 
 \renewcommand{\stelleText}{Biochemikerin für Proteinanalytik}
-\renewcommand{\firma}{Phadia GmbH‌}
-\renewcommand{\anschrift}{Munzinger Straß‌e 7\\79111 Freiburg im Breisgau}
+\renewcommand{\firma}{Phadia GmbH}
+\renewcommand{\anschrift}{Munzinger Straße 7\\79111 Freiburg im Breisgau}
+
+
+\renewcommand{\adresse}{\anschrift}
+\renewcommand{\anrede}{Sehr geehrte Damen und Herren}
 
 
 \ifthenelse{ \equal{\kontakt} {none}}
@@ -28,11 +52,11 @@
 }
 {
     \renewcommand{\adresse}{\kontakt \\ \anschrift}
-    \renewcommand{\anrede}{Sehr geehrte Damen und Herren}
+    \ifthenelse{ \equal{\geschlecht} {Herr}}
+        {\renewcommand{\anrede}{Sehr geehrter \geschlecht~\kontakt}}
+        {\renewcommand{\anrede}{Sehr geehrte \geschlecht~\kontakt}}
 
 }
 % {
 % \renewcommand{\adresse}{\kontakt \\Munzinger Straße 7\\79111 Freiburg im Breisgau}
 % \newcommand{\anrede}{Sehr geehrte Damen und Herren}
-
-‌‌
