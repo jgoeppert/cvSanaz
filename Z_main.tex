@@ -8,6 +8,7 @@
 
 
 \documentclass[10pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+% \documentclass{article}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
 
 
@@ -49,15 +50,15 @@
 %\usepackage{multibib}
 %\newcites{book,misc}{{Books},{Others}}
 
-\usepackage{datatool}
-\DTLsetseparator{|}
+\usepackage[verbose]{datatool}
+% \DTLsetseparator{|}
 % \usepackage{filecontents}
-\begin{filecontents}{test2.csv}
-    name|points
-    John|172
-    Sue|120
-    Mike|64
-\end{filecontents}
+% \begin{filecontents}{test2.csv}
+%     name,points
+%     John,172
+%     Sue,120
+%     Mike,64
+% \end{filecontents}
 
 % 1,2
 % 7Bioscience,79395
@@ -73,25 +74,48 @@
 % \input{SanazBewerbungenTest.csv}
 
 
-% \DTLloaddb{bewerbungen}{SanazBewerbungenTest.csv}
+% \DTLloaddb{bewerbungen}{SanazBewerbungen.csv}
 \DTLsetseparator{|}
-\DTLloaddb{bewerbungen}{test2.csv}
-\DTLrowcount{bewerbungen}
-\DTLcolumncount{bewerbungen}
+\DTLloaddb
+[
+    % noheader,keys={1,2}
+]
+{db}{SanazBewerbungen.csv}
+\DTLrowcount{db}
+\DTLcolumncount{db}
 
-\DTLforeach{bewerbungen}{
-    \name = name
-    % \input{./sections/stelleAuto.tex}
-    % \input{letters/standardLetter.tex}
-    % \input{sections/cv-MAIN}
-}
+
+% \newcommand{\adresse}{}
+% \newcommand{\anrede}{}
+
+% \DTLdisplaydb{db}
+\DTLforeach{db}{
+    \firma=arbeitgeber,
+    \ortschaft=ortschaft,
+    \strasse=strasse,
+    \geschlecht=geschlecht,
+    \name=Name,
+    \vorname=vorname,
+    \typ=typ,
+    \stelle=stelle,
+    \stelleText=stelleText}
 {
-% \arbeitgeber
-\DTLforeachkeyinrow{\thisValue}{~ \thisValue } \par
-% asd
+    \input{letters/letterOpening.tex}
+    \input{letters/standardLetter.tex}
+% \firma
+    % \par
+    % \DTLforeachkeyinrow{\thisValue}{~ \thisValue } \par
+% % asd
 }
 
 
+    
+    
+    
+        % }
+    % \name = 1
+    % \input{./sections/stelleAuto.tex}
+    % \input{sections/cv-MAIN}
 
 
 

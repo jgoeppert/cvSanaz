@@ -1,4 +1,12 @@
-name|points
-John|172
-Sue|120
-Mike|64
+    name,points
+    John,172
+    Sue,120
+    Mike,64
+
+% FirstName,Surname,StudentNo,Score
+% John,"Smith, Jr",102689,68
+% Jane,Brown,102647,75
+% Andy,Brown,103569,42
+% Z\"oe,Adams,105987,52
+% Roger,Brady,106872,58
+% Clare,Verdon,104356,45

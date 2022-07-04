@@ -1,0 +1,41 @@
+
+\providecommand{\anschrift}{}
+\let\tmp\anschrift
+\renewcommand{\anschrift}{\tmp\~ ortschaft}
+% \let\tmp\anschrift
+% \renewcommand{\anschrift}{\tmp~ \ortschaft}
+
+\providecommand{\kontakt}{\name}
+
+\ifthenelse{ \equal{\kontakt} {}}
+{ 
+    \providecommand{\adresse}{\anschrift}
+    \providecommand{\anrede}{Sehr geehrte Damen und Herren}
+}
+{
+    \providecommand{\adresse}{\kontakt \\ \anschrift}
+    \ifthenelse{ \equal{\geschlecht} {Herr}}
+        {\providecommand{\anrede}{Sehr geehrter \geschlecht~\kontakt}}
+        {\providecommand{\anrede}{Sehr geehrte \geschlecht~\kontakt}}
+
+}
+
+
+% \providecommand{\adresse}{}
+% \providecommand*{\anrede}{}
+
+% \recipient{\firma{}}{\adresse{}}
+% \opening{\anrede{},}
+
+
+
+%%%%%%%%%%%%%%% MANUELL
+% \renewcommand{\stelleText}{Biochemikerin für Proteinanalytik}
+% \renewcommand{\firma}{Phadia GmbH}
+% \renewcommand{\anschrift}{Munzinger Straße 7\\79111 Freiburg im Breisgau}
+
+% \renewcommand{\adresse}{\anschrift}
+% \renewcommand{\anrede}{Sehr geehrte Damen und Herren}
+
+
+
