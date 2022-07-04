@@ -5,6 +5,8 @@
 % conditions of the LaTeX Project Public License version 1.3c,
 % available at http://www.latex-project.org/lppl/.
 
+
+
 \documentclass[10pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
 
@@ -46,13 +48,54 @@
 % bibliography with mutiple entries
 %\usepackage{multibib}
 %\newcites{book,misc}{{Books},{Others}}
+
+\usepackage{datatool}
+\DTLsetseparator{|}
+% \usepackage{filecontents}
+\begin{filecontents}{test2.csv}
+    name|points
+    John|172
+    Sue|120
+    Mike|64
+\end{filecontents}
+
+% 1,2
+% 7Bioscience,79395
+% ChemCon,79108 
+% Spindiag,79108
+
+
 %----------------------------------------------------------------------------------
 %            content
 %----------------------------------------------------------------------------------
 \begin{document}
 
+% \input{SanazBewerbungenTest.csv}
 
-\input{sections/stelle.tex}
+
+% \DTLloaddb{bewerbungen}{SanazBewerbungenTest.csv}
+\DTLsetseparator{|}
+\DTLloaddb{bewerbungen}{test2.csv}
+\DTLrowcount{bewerbungen}
+\DTLcolumncount{bewerbungen}
+
+\DTLforeach{bewerbungen}{
+    \name = name
+    % \input{./sections/stelleAuto.tex}
+    % \input{letters/standardLetter.tex}
+    % \input{sections/cv-MAIN}
+}
+{
+% \arbeitgeber
+\DTLforeachkeyinrow{\thisValue}{~ \thisValue } \par
+% asd
+}
+
+
+
+
+
+% \input{sections/stelle.tex}
 
 % \input{letters/JobRad}
 % \input{letters/Spindiag}
@@ -63,8 +106,8 @@
 % 
 
 % \input{letters/phadia}
-\input{letters/standardLetter.tex}
-\input{sections/cv-MAIN}
+% \input{letters/standardLetter.tex}
+% \input{sections/cv-MAIN}
 % asd
 \end{document}
 %% end of file `template.tex'.
