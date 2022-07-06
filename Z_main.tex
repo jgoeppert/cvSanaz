@@ -51,6 +51,7 @@
 %\newcites{book,misc}{{Books},{Others}}
 
 \usepackage[verbose]{datatool}
+\usepackage{etoolbox}
 % \DTLsetseparator{|}
 % \usepackage{filecontents}
 % \begin{filecontents}{test2.csv}
@@ -71,51 +72,14 @@
 %----------------------------------------------------------------------------------
 \begin{document}
 
-% \input{SanazBewerbungenTest.csv}
+
+\input{sections/stelleNow.tex}
+\stelle{\stelleHead}
+\input{letters/letterOpening.tex}
+\input{letters/standardLetter.tex}
+\input{sections/cv-MAIN.tex}
 
 
-% \DTLloaddb{bewerbungen}{SanazBewerbungen.csv}
-\DTLsetseparator{|}
-\DTLloaddb
-[
-    % noheader,keys={1,2}
-]
-{db}{SanazBewerbungen.csv}
-\DTLrowcount{db}
-\DTLcolumncount{db}
-
-
-% \newcommand{\adresse}{}
-% \newcommand{\anrede}{}
-
-% \DTLdisplaydb{db}
-\DTLforeach{db}{
-    \firma=arbeitgeber,
-    \ortschaft=ortschaft,
-    \strasse=strasse,
-    \geschlecht=geschlecht,
-    \name=Name,
-    \vorname=vorname,
-    \typ=typ,
-    \stelle=stelle,
-    \stelleText=stelleText}
-{
-    \input{letters/letterOpening.tex}
-    \input{letters/standardLetter.tex}
-% \firma
-    % \par
-    % \DTLforeachkeyinrow{\thisValue}{~ \thisValue } \par
-% % asd
-}
-
-
-    
-    
-    
-        % }
-    % \name = 1
-    % \input{./sections/stelleAuto.tex}
-    % \input{sections/cv-MAIN}
 
 
 

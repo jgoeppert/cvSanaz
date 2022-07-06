@@ -1,24 +1,66 @@
 
-\providecommand{\anschrift}{}
-\let\tmp\anschrift
-\renewcommand{\anschrift}{\tmp\~ ortschaft}
-% \let\tmp\anschrift
-% \renewcommand{\anschrift}{\tmp~ \ortschaft}
+\def\adresse{}
+\ifdefempty{\strasse}{}{\def\adresse{\strasse}}
+\ifdefempty{\ortschaft}{}{
+    \let\tmp\adresse
+    \def\adresse{\tmp \par \ortschaft}
+}
+\ifdefempty{\land}{}{
+    \let\oldAdd\adresse
+    \def\adresse{\oldAdd \par \land}
+}
 
-\providecommand{\kontakt}{\name}
+
+
+
+
+
+\def\kontakt{}
+\ifdefempty{\name}{\def\kontakt{}}{\def\kontakt{\name}}
+\ifdefempty{\vorname}{}
+    {
+        \let\oldKonVor\kontakt
+        \def\kontakt{\vorname~\oldKonVor}
+    }
+\ifdefempty{\titel}{}
+    {
+        \let\oldKonTit\kontakt
+        \def\kontakt{\titel~\oldKonTit}
+    }
+\ifdefempty{\vorname}
+    {
+        \let\oldKonGesch\kontakt
+        \def\kontakt{\geschlecht~\oldKonGesch}
+    }
+{}
+
+\ifdefempty{\titel}{\def\titleName{\name}}{\def\titleName{\titel~\name}}
+
+\ifdefempty{\geschlecht}{
+    \def\anrede{Sehr geehrte Damen und Herren}
+}{
+    \let\oldAd\adresse
+    \def\adresse{\kontakt \par \oldAd}
+    \ifthenelse{ \equal{\geschlecht} {Herr}}
+        {\def\anrede{Sehr geehrter \geschlecht~\titleName}}
+        {\def\anrede{Sehr geehrte \geschlecht~\titleName}}
+
+}
+
+
+
 
 \ifthenelse{ \equal{\kontakt} {}}
 { 
     \providecommand{\adresse}{\anschrift}
-    \providecommand{\anrede}{Sehr geehrte Damen und Herren}
 }
-{
-    \providecommand{\adresse}{\kontakt \\ \anschrift}
-    \ifthenelse{ \equal{\geschlecht} {Herr}}
-        {\providecommand{\anrede}{Sehr geehrter \geschlecht~\kontakt}}
-        {\providecommand{\anrede}{Sehr geehrte \geschlecht~\kontakt}}
+% {
+%     \providecommand{\adresse}{\kontakt \\ \anschrift}
+%     \ifthenelse{ \equal{\geschlecht} {Herr}}
+%         {\providecommand{\anrede}{Sehr geehrter \geschlecht~\kontakt}}
+%         {\providecommand{\anrede}{Sehr geehrte \geschlecht~\kontakt}}
 
-}
+% }
 
 
 % \providecommand{\adresse}{}
