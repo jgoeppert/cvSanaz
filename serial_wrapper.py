@@ -41,7 +41,7 @@ for idx,bewerbung in df.iterrows():
         file.write(writeString)
     # input('waiting')
     file.close()
-    # input('after file')
+    # input(bewerbung['firma'])
     texString = 'pdflatex.exe .\Z_main.tex'
     # texString = 'pdflatex.exe -jobname=%s -output-dir=outputs .\Z_main.tex' % bewerbung['firma'].replace(' ', '_')
     print(texString)
