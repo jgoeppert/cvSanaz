@@ -3,7 +3,7 @@ import os
 import codecs 
 import shutil
 
-df = pd.read_excel(r'./Sanaz Bewerbungen.xlsx')
+df = pd.read_excel(r'./Sanaz Bewerbungen.xlsx',dtype=str)
 # df = pd.read_csv(r'./SanazBewerbungen.csv')
 # df = pd.read_csv('SanazBewerbungen.csv',sep='|')
 df = df.fillna('')
@@ -25,10 +25,10 @@ fields=[
     'eintritt',
     'stelleText',
     'stelleHead',
+    'artikelFirma',
 ]
 
-
-for idx,bewerbung in df.iterrows():
+def genStelleText(field,bewerbung):
     file = codecs.open(r"sections/stelleNow.tex", "w","utf-8")
     for field in fields:
         # print(bewerbung[field.index(field)])
@@ -41,13 +41,17 @@ for idx,bewerbung in df.iterrows():
         file.write(writeString)
     # input('waiting')
     file.close()
+
+def processPDF(bewerbung):
     # input(bewerbung['firma'])
     texString = 'pdflatex.exe .\Z_main.tex'
     # texString = 'pdflatex.exe -jobname=%s -output-dir=outputs .\Z_main.tex' % bewerbung['firma'].replace(' ', '_')
     print(texString)
     os.system(texString)
     name = 'Sanaz_Goeppert_Asadollahpour'
-    target = os.path.join(os.getcwd(), 'outputs', '%s_%s_%s.pdf' % (name,bewerbung['firma'],bewerbung['stelleHead']) )
+    file='%s_%s_%s.pdf' % (name,bewerbung['firma'],bewerbung['stelleHead'])
+    file=file.replace(':','-')
+    target = os.path.join(os.getcwd(), 'outputs', file )
     # target = target.replace(' ', '_')
     # target = target.decode('utf-8','ignore').encode("utf-8")
     # target = target.replace(' ', '_').replace('/','').replace('*','').replace('%','')
@@ -56,10 +60,19 @@ for idx,bewerbung in df.iterrows():
     target = target.replace('*','')
     target = target.replace('%','')
     target = target.replace(',','')
+    # target = target.replace('&','')
+    # target = target.replace(':','-')
     source = os.path.join(os.getcwd(), 'Z_main.pdf')
     # input(target)
     shutil.copy2(source,target)
     # input(target)
+
+
+for idx,bewerbung in df.iterrows():
+    genStelleText(fields,bewerbung)
+    processPDF(bewerbung)
+
+
 
 # for bewerbung in df.iterrows():
 #     print(bewerbung)

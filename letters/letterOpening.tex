@@ -54,6 +54,13 @@
 { 
     \providecommand{\adresse}{\anschrift}
 }
+
+\ifdefempty{\artikelFirma}
+    {\def\firmaText{\firma}}
+    {\ifthenelse{ \equal{\artikelFirma} {die}}{\def\firmaText{der \firma}}}
+
+
+
 % {
 %     \providecommand{\adresse}{\kontakt \\ \anschrift}
 %     \ifthenelse{ \equal{\geschlecht} {Herr}}
