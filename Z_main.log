@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.15)  10 JUL 2022 23:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.15)  11 JUL 2022 22:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -985,4 +985,132 @@ Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: T1).
-(mic
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(59.74988pt, 478.00812pt, 59.74988pt)
+* v-part:(T,H,B)=(67.60269pt, 676.04005pt, 101.4041pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=478.00812pt
+* \textheight=676.04005pt
+* \oddsidemargin=-12.52011pt
+* \evensidemargin=-12.52011pt
+* \topmargin=-41.6673pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=57.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package hyperref Info: Link coloring OFF on input line 73.
+(C:\ProgramsFiles\Latex\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+
+(C:\ProgramsFiles\Latex\MiKTeX\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(C:\ProgramsFiles\Latex\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count352
+)
+LaTeX Info: Redefining \ref on input line 73.
+LaTeX Info: Redefining \pageref on input line 73.
+LaTeX Info: Redefining \nameref on input line 73.
+
+(Z_main.out) (Z_main.out)
+\@outlinefile=\write5
+\openout5 = `Z_main.out'.
+
+\pagenumberwidth=\skip100
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 73.
+ (sections/stelleNow.tex) (letters/letterOpening.tex)
+(letters/standardLetter.tex
+
+LaTeX Font Warning: Font shape `U/fontawesometwo/m/sl' undefined
+(Font)              using `U/fontawesometwo/m/n' instead on input line 11.
+
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
+1.
+(C:\ProgramsFiles\Latex\MiKTeX\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+(C:\ProgramsFiles\Latex\MiKTeX\tex/latex/microtype\mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
+1.
+
+(C:\ProgramsFiles\Latex\MiKTeX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+11.
+
+(C:\ProgramsFiles\Latex\MiKTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+11.
+
+(C:\ProgramsFiles\Latex\MiKTeX\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 11.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 11.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 11.
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+
+ []
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 \makelettertitle
+                     
+? x
+ 
+Here is how much of TeX's memory you used:
+ 28061 strings out of 478582
+ 510652 string characters out of 2851350
+ 833713 words of memory out of 3000000
+ 45643 multiletter control sequences out of 15000+600000
+ 510947 words of font info for 73 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 99i,3n,94p,1005b,318s stack positions out of 10000i,1000n,20000p,200000b,80000s
+No pages of output.
+PDF statistics:
+ 36 PDF objects out of 1000 (max. 8388607)
+ 7 named destinations out of 1000 (max. 500000)
+ 22585 words of extra memory for PDF output out of 24883 (max. 10000000)
+
