@@ -40,6 +40,7 @@ def genStelleText(field,bewerbung):
         val = str(bewerbung[field])
         val = val.replace('%','\\%')
         val = val.replace('&','\\&')
+        val = val.replace('_','\\_')
         writeString = '\def\\' + field + '{%s}\n' % val
         # if val == nan: val = ''
         file.write(writeString)
@@ -58,7 +59,7 @@ def processPDF(bewerbung):
     # input(bewerbung['firma'])
     name = 'Sanaz_Goeppert_Asadollahpour'
     bewName='%s_%s' % (bewerbung['firma'],bewerbung['stelle Original'])
-    bewName=bewName.replace(':','-')
+    bewName = bewName.replace(':','-')
     bewName = bewName.replace(' ','_')
     bewName = bewName.replace('/','')
     bewName = bewName.replace('*','')
@@ -101,11 +102,13 @@ def processPDF(bewerbung):
     # input(target)
 
 
+df=df.iloc[17:]
+
 for idx,bewerbung in df.iterrows():
+    print(idx)
     genStelleText(fields,bewerbung)
     makePDF()
     processPDF(bewerbung)
-
 
 
 # for bewerbung in df.iterrows():
