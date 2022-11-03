@@ -7,7 +7,11 @@ from PyPDF2 import PdfFileWriter, PdfFileReader
 # import ntpath
 # ntpath.realpath = ntpath.abspath
 
+url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-JxpwsP1t5ceEK4esRpF32rTx1J5ztuvQvcmxEzMEAXzuYuODILMYWIbjiPvhErubapziUV4XbNxH/pub?gid=0&single=true&output=csv'
+print(url)
 df = pd.read_excel(r'./Sanaz Bewerbungen.xlsx',dtype=str)
+# df = pd.read_csv(r,dtype=str)
+df = pd.read_csv(url,dtype=str)
 # df = pd.read_csv(r'./SanazBewerbungen.csv')
 # df = pd.read_csv('SanazBewerbungen.csv',sep='|')
 df = df.fillna('')
@@ -15,7 +19,9 @@ df = df.fillna('')
 # df = df.replace('%','3')
 
 
+
 fields=[
+    'lfd.Nr',
     'firma',
     'land',
     'ortschaft',
@@ -34,13 +40,11 @@ fields=[
 
 def genStelleText(field,bewerbung):
     file = codecs.open(r"sections/stelleNow.tex", "w","utf-8")
-    for field in fields:
+    for field in fields[1:]:
         # print(bewerbung[field.index(field)])
         # print(bewerbung[field])
         val = str(bewerbung[field])
-        val = val.replace('%','\\%')
-        val = val.replace('&','\\&')
-        val = val.replace('_','\\_')
+        val = replaceStringChars(val)
         writeString = '\def\\' + field + '{%s}\n' % val
         # if val == nan: val = ''
         file.write(writeString)
@@ -55,37 +59,57 @@ def makePDF():
     os.system(texString)
 
 
+def replacePathChars(strIn):
+    tmp = strIn.replace(':','-')
+    tmp = tmp.replace(' ','_')
+    tmp = tmp.replace('/','')
+    tmp = tmp.replace('*','')
+    tmp = tmp.replace('%','')
+    tmp = tmp.replace(',','')
+    tmp = tmp.replace('.','')
+    tmp = tmp.replace('(','')
+    tmp = tmp.replace(')','')
+    tmp = tmp.replace('\n','')
+    tmp = tmp.replace('#','\#')
+    return tmp
+
+def replaceStringChars(strIn):
+    tmp = strIn.replace(':','-')
+    # tmp = tmp.replace(' ','_')
+    # tmp = tmp.replace('/','')
+    # tmp = tmp.replace('*','')
+    # tmp = tmp.replace('%','')
+    # tmp = tmp.replace(',','')
+    # tmp = tmp.replace('.','')
+    # tmp = tmp.replace('(','')
+    # tmp = tmp.replace(')','')
+    # tmp = tmp.replace('\n','')
+    tmp = tmp.replace('%','\\%')
+    tmp = tmp.replace('&','\\&')
+    tmp = tmp.replace('_','\\_')
+    tmp = tmp.replace('#','\#')
+    return tmp
+
+
 def processPDF(bewerbung):
     # input(bewerbung['firma'])
     name = 'Sanaz_Goeppert_Asadollahpour'
-    bewName='%s_%s' % (bewerbung['firma'],bewerbung['stelle Original'])
-    bewName = bewName.replace(':','-')
-    bewName = bewName.replace(' ','_')
-    bewName = bewName.replace('/','')
-    bewName = bewName.replace('*','')
-    bewName = bewName.replace('%','')
-    bewName = bewName.replace(',','')
-    bewName = bewName.replace('.','')
-    bewName = bewName.replace('(','')
-    bewName = bewName.replace(')','')
-    bewName = bewName.replace('\n','')
+    bewPath = '%03d_%s_%s' % (int(bewerbung[fields[0]]), bewerbung['firma'], bewerbung['stelleText'][:9])
+    bewPath = replacePathChars(bewPath)
+    # bewName = replacePathChars('%s_%s' % (bewerbung['firma'],bewerbung['stelle Original']))
+    # print(bewName)
     # target = os.path.join(os.getcwd(), 'outputs', bewName)#[:82])
-    target = os.path.join('outputs', bewName)#[:82])
-    # target = target.replace(' ', '_')
-    # target = target.decode('utf-8','ignore').encode("utf-8")
-    # target = target.replace(' ', '_').replace('/','').replace('*','').replace('%','')
-    # target = target.replace('&','')
-    # target = target.replace(':','-')
+    target = os.path.join('outputs', bewPath)#[:82])
     shutil.rmtree(target, ignore_errors=True)
     os.mkdir(target)
     target=os.path.join(target, name)
     # extender = '\\\\?'
-    # targetF=os.path.join(target,bewName)+'.pdf'
+    # targetF=os.path.join(target,bewName)
     targetF=target + '_Bewerbung.pdf'
     # source = os.path.join(os.getcwd(), 'Z_main.pdf')
     source = 'Z_main.pdf'
     # input(target)
-    print(target)
+    print(targetF)
     shutil.copyfile(source,targetF)
     pdfReader = PdfFileReader(open(targetF, "rb"))
     pdfWriter = PdfFileWriter()
@@ -102,9 +126,10 @@ def processPDF(bewerbung):
     # input(target)
 
 
-df=df.iloc[17:]
 
-for idx,bewerbung in df.iterrows():
+
+
+for idx,bewerbung in df.iloc[48:].iterrows():
     print(idx)
     genStelleText(fields,bewerbung)
     makePDF()

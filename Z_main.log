@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.15)  4 AUG 2022 09:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.15)  2 NOV 2022 22:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1107,10 +1107,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--59
 
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
 (Font)              Font shape `T1/lmss/m/sl' tried instead on input line 59.
-[1
-
-{C:/Users/Jacob Goeppert/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}])
-(sections/cv-MAIN.tex
+) (sections/cv-MAIN.tex
 \socialsdetailsBox=\box70
 \headerbox=\box71
 \headerHeight=\skip101
@@ -1129,7 +1126,7 @@ File: tikzlibraryshapes.misc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 s.misc.code.tex
 File: pgflibraryshapes.misc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ))
-<Seehstern_7797.jpg, id=48, 213.4374pt x 185.0112pt>
+<Seehstern_7797.jpg, id=37, 213.4374pt x 185.0112pt>
 File: Seehstern_7797.jpg Graphic file (type jpg)
 <use Seehstern_7797.jpg>
 Package pdftex.def Info: Seehstern_7797.jpg  used on input line 4.
@@ -1144,7 +1141,9 @@ Overfull \hbox (0.79999pt too wide) in paragraph at lines 4--4
 [][] 
  []
 
-(sections/erfahrung.tex
+(sections/erfahrung.tex [1
+
+{C:/Users/Jacob Goeppert/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 Overfull \hbox (374.50706pt too wide) in paragraph at lines 2--2
  []|[]|[][]|
  []
@@ -1187,27 +1186,26 @@ Package rerunfilecheck Info: File `Z_main.out' has not changed.
 (rerunfilecheck)             Checksum: 68460DAFD2B7873880C7059F703782D6;889.
  ) 
 Here is how much of TeX's memory you used:
- 28544 strings out of 478582
- 522026 string characters out of 2851350
- 860713 words of memory out of 3000000
- 46015 multiletter control sequences out of 15000+600000
- 541709 words of font info for 116 fonts, out of 8000000 for 9000
+ 28542 strings out of 478582
+ 521976 string characters out of 2851350
+ 863201 words of memory out of 3000000
+ 46011 multiletter control sequences out of 15000+600000
+ 541794 words of font info for 117 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,13n,94p,1005b,866s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 99i,12n,94p,1005b,866s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/ProgramsFiles/Latex/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/ProgramsFiles
 /Latex/MiKTeX/fonts/enc/dvips/fontawesome/fontawesomethree.enc}{C:/ProgramsFile
 s/Latex/MiKTeX/fonts/enc/dvips/base/8r.enc}{C:/ProgramsFiles/Latex/MiKTeX/fonts
 /enc/dvips/fontawesome/fontawesometwo.enc}<C:/ProgramsFiles/Latex/MiKTeX/fonts/
 type1/public/brushscr/BrushScriptX-Italic.pfa><C:/ProgramsFiles/Latex/MiKTeX/fo
 nts/type1/public/fontawesome/FontAwesome.pfb><C:/ProgramsFiles/Latex/MiKTeX/fon
-ts/type1/public/eurosym/feymr10.pfb><C:/ProgramsFiles/Latex/MiKTeX/fonts/type1/
-public/lm/lmss10.pfb><C:/ProgramsFiles/Latex/MiKTeX/fonts/type1/public/lm/lmss1
-2.pfb><C:/ProgramsFiles/Latex/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Pro
-gramsFiles/Latex/MiKTeX/fonts/type1/public/lm/lmsso10.pfb><C:/ProgramsFiles/Lat
-ex/MiKTeX/fonts/type1/public/lm/lmsso9.pfb>
-Output written on Z_main.pdf (3 pages, 517555 bytes).
+ts/type1/public/lm/lmss10.pfb><C:/ProgramsFiles/Latex/MiKTeX/fonts/type1/public
+/lm/lmss12.pfb><C:/ProgramsFiles/Latex/MiKTeX/fonts/type1/public/lm/lmssbx10.pf
+b><C:/ProgramsFiles/Latex/MiKTeX/fonts/type1/public/lm/lmsso10.pfb><C:/Programs
+Files/Latex/MiKTeX/fonts/type1/public/lm/lmsso9.pfb>
+Output written on Z_main.pdf (3 pages, 509169 bytes).
 PDF statistics:
- 108 PDF objects out of 1000 (max. 8388607)
+ 103 PDF objects out of 1000 (max. 8388607)
  12 named destinations out of 1000 (max. 500000)
  41546 words of extra memory for PDF output out of 42996 (max. 10000000)
 

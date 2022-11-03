@@ -56,8 +56,11 @@
 }
 
 \ifdefempty{\artikelFirma}
-    {\def\firmaText{\firma}}
-    {\ifthenelse{ \equal{\artikelFirma} {die}}{\def\firmaText{der \firma}}}
+    {\def\firmaText{bei \firma}}
+    {
+        \ifthenelse{\equal{\artikelFirma} {die}} {\def\firmaText{bei der \firma}}{}
+        \ifthenelse{\equal{\artikelFirma} {das}} {\def\firmaText{beim \firma}}{}
+    }
 
 
 
