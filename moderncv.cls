@@ -498,8 +498,9 @@
 \newcommand*{\makesignature}{
     % \newsavebox{\sig}
     % \savebox{\sig}{
-        \textbf{Freiburg im Breisgau, \today} \newline
-        \signIt{}
+      \textbf{Freiburg im Breisgau, \today} \newline
+      % \textbf{Freiburg im Breisgau, 3. November 2022} \newline
+      \signIt{}
         % \vspace{1em}
         % \fjd{\@signature}
         % \Huge\calligra{\@signature}

@@ -129,7 +129,7 @@ def processPDF(bewerbung):
 
 
 
-for idx,bewerbung in df.iloc[48:].iterrows():
+for idx,bewerbung in df.iloc[54:].iterrows():
     print(idx)
     genStelleText(fields,bewerbung)
     makePDF()
