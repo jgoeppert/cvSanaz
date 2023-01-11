@@ -1,3 +1,5 @@
+#!/bin/python3
+
 import pandas as pd
 import os
 import codecs 
@@ -6,6 +8,22 @@ import numpy as np
 from PyPDF2 import PdfFileWriter, PdfFileReader
 # import ntpath
 # ntpath.realpath = ntpath.abspath
+import sys
+
+# from pydrive.auth import GoogleAuth
+# from pydrive.drive import GoogleDrive
+
+
+# gauth = GoogleAuth()           
+# drive = GoogleDrive(gauth)  
+
+# print(f"Name of the script      : {sys.argv[0]=}")
+# print(f"Arguments of the script : {sys.argv[1:]=}")
+
+
+
+
+# quit()
 
 url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-JxpwsP1t5ceEK4esRpF32rTx1J5ztuvQvcmxEzMEAXzuYuODILMYWIbjiPvhErubapziUV4XbNxH/pub?gid=0&single=true&output=csv'
 print(url)
@@ -127,9 +145,13 @@ def processPDF(bewerbung):
 
 
 
+start=1
+# print("sys: %s" % sys.argv)
+if len(sys.argv) > 1 : start=int(sys.argv[1])
+# print(start)
+# quit()
 
-
-for idx,bewerbung in df.iloc[54:].iterrows():
+for idx,bewerbung in df.iloc[-start:].iterrows():
     print(idx)
     genStelleText(fields,bewerbung)
     makePDF()

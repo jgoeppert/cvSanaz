@@ -273,12 +273,14 @@
     % \node[anchor=north west,fill=lightgray, inner sep = \@photoframewidth,draw=none] (pic) at (0,0)% 
     {\includegraphics[width=\@photowidth]{\@photo}};%
     % \node [ draw = none,inner xsep = 0  , text width=\@photowidth+2*0.2cm,  align=center, minimum height=1cm,text = white,fill=color1, below=0 of pic.south east,anchor=north east] (name)
-    \node [ draw = none,inner xsep = 0  , text width=\@photowidth+2*\@photoframewidth,  align=center, minimum height=1cm,text = white,fill=color1, below=0 of pic.south east,anchor=north east,%
+    \node [ draw = none,inner xsep = 0  ,  text width=\@photowidth+2*\@photoframewidth,  align=center, minimum height=1cm,text = white,fill=color1, below=0 of pic.south east,anchor=north east,%
     % \node [ draw = none,inner xsep = 0  , text width=\picWdth,  align=center, minimum height=1cm,text = white,fill=color1, below=0 of pic.south east,anchor=north east,%
         % rounded rectangle, rounded rectangle west arc = 0pt
         ]%
     (name)
-    {   \Large  \textbf{ \@firstname ~\@lastname\\ \vspace{1ex}
+    {   \Large  \textbf{ \@firstname ~\@lastname\\ 
+      % \ifthenelse
+        \vspace{1ex}
         \small Angestrebte Position:\\
         \@stelle\\
         % \normalsize{Angestrebte Position} 
