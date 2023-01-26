@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.15)  12 DEC 2022 10:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.15)  15 JAN 2023 20:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1042,75 +1042,10 @@ LaTeX Info: Redefining \nameref on input line 73.
 \@outlinefile=\write5
 \openout5 = `Z_main.out'.
 
-\pagenumberwidth=\skip100
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 73.
- (sections/stelleNow.tex) (letters/letterOpening.tex)
-(letters/standardLetter.tex
-
-LaTeX Font Warning: Font shape `U/fontawesometwo/m/sl' undefined
-(Font)              using `U/fontawesometwo/m/n' instead on input line 12.
-
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-2.
-(C:\ProgramsFiles\Latex\MiKTeX\tex/latex/lm\ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-(C:\ProgramsFiles\Latex\MiKTeX\tex/latex/microtype\mt-cmr.cfg
-File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
-(RS)
-)
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-2.
-
-(C:\ProgramsFiles\Latex\MiKTeX\tex/latex/lm\omllmm.fd
-File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-12.
-
-(C:\ProgramsFiles\Latex\MiKTeX\tex/latex/lm\omslmsy.fd
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-12.
-
-(C:\ProgramsFiles\Latex\MiKTeX\tex/latex/lm\omxlmex.fd
-File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 12.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 12.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 12.
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-
- []
-
-LaTeX Font Info:    Font shape `T1/pbsi/xl/n' will be
-(Font)              scaled to size 24.88794pt on input line 61.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `pbsi' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-
-Underfull \hbox (badness 10000) in paragraph at lines 61--61
-
- []
-
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 61.
-) (sections/cv-MAIN.tex
+ (sections/stelleNow.tex) (sections/cv-MAIN.tex
 \socialsdetailsBox=\box70
 \headerbox=\box71
-\headerHeight=\skip101
+\headerHeight=\skip100
 \pgf@layerbox@bg=\box72
 \pgf@layerboxsaved@bg=\box73
 
@@ -1126,11 +1061,44 @@ File: tikzlibraryshapes.misc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 s.misc.code.tex
 File: pgflibraryshapes.misc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ))
-<Seehstern_7797.jpg, id=37, 213.4374pt x 185.0112pt>
+<Seehstern_7797.jpg, id=6, 213.4374pt x 185.0112pt>
 File: Seehstern_7797.jpg Graphic file (type jpg)
 <use Seehstern_7797.jpg>
 Package pdftex.def Info: Seehstern_7797.jpg  used on input line 4.
 (pdftex.def)             Requested size: 156.49014pt x 135.65553pt.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
+.
+ (C:\ProgramsFiles\Latex\MiKTeX\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+(C:\ProgramsFiles\Latex\MiKTeX\tex/latex/microtype\mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
+.
+
+(C:\ProgramsFiles\Latex\MiKTeX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+4.
+
+(C:\ProgramsFiles\Latex\MiKTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+4.
+
+(C:\ProgramsFiles\Latex\MiKTeX\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 4.
 LaTeX Font Info:    Trying to load font information for U+fontawesomethree on i
 nput line 4.
 
@@ -1141,9 +1109,7 @@ Overfull \hbox (0.79999pt too wide) in paragraph at lines 4--4
 [][] 
  []
 
-(sections/erfahrung.tex [1
-
-{C:/Users/Jacob Goeppert/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+(sections/erfahrung.tex
 Overfull \hbox (374.50706pt too wide) in paragraph at lines 2--2
  []|[]|[][]|
  []
@@ -1153,7 +1119,12 @@ Overfull \hbox (374.50706pt too wide) in paragraph at lines 4--4
  []|[]|[][]|
  []
 
-[2 <./Seehstern_7797.jpg>]) (sections/migration.tex
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 38.
+[1
+
+{C:/Users/Jacob Goeppert/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./S
+eehstern_7797.jpg>]) (sections/migration.tex
 Overfull \hbox (374.50706pt too wide) in paragraph at lines 3--3
  []|[]|[][]|
  []
@@ -1173,39 +1144,50 @@ Overfull \hbox (374.50706pt too wide) in paragraph at lines 20--20
  []|[]|[][]|
  []
 
+LaTeX Font Info:    Font shape `T1/pbsi/xl/n' will be
+(Font)              scaled to size 24.88794pt on input line 25.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `pbsi' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 
 Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
 
-) [3] (Z_main.aux)
+) [2] (Z_main.aux)
 
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package rerunfilecheck Info: File `Z_main.out' has not changed.
-(rerunfilecheck)             Checksum: 68460DAFD2B7873880C7059F703782D6;889.
+
+Package rerunfilecheck Warning: File `Z_main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Z_main.out':
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
+(rerunfilecheck)             After:  68460DAFD2B7873880C7059F703782D6;889.
  ) 
 Here is how much of TeX's memory you used:
- 28538 strings out of 478582
- 521924 string characters out of 2851350
- 863156 words of memory out of 3000000
- 46011 multiletter control sequences out of 15000+600000
- 541592 words of font info for 115 fonts, out of 8000000 for 9000
+ 28450 strings out of 478582
+ 520593 string characters out of 2851350
+ 869642 words of memory out of 3000000
+ 45971 multiletter control sequences out of 15000+600000
+ 528015 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,12n,94p,1005b,866s stack positions out of 10000i,1000n,20000p,200000b,80000s
-{C:/ProgramsFiles/Latex/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/ProgramsFiles
-/Latex/MiKTeX/fonts/enc/dvips/fontawesome/fontawesomethree.enc}{C:/ProgramsFile
-s/Latex/MiKTeX/fonts/enc/dvips/base/8r.enc}{C:/ProgramsFiles/Latex/MiKTeX/fonts
+ 99i,12n,94p,1005b,867s stack positions out of 10000i,1000n,20000p,200000b,80000s
+{C:/ProgramsFiles/Latex/MiKTeX/fonts/enc/dvips/base/8r.enc}{C:/ProgramsFiles/
+Latex/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/ProgramsFiles/Latex/MiKTeX/fonts/
+enc/dvips/fontawesome/fontawesomethree.enc}{C:/ProgramsFiles/Latex/MiKTeX/fonts
 /enc/dvips/fontawesome/fontawesometwo.enc}<C:/ProgramsFiles/Latex/MiKTeX/fonts/
 type1/public/brushscr/BrushScriptX-Italic.pfa><C:/ProgramsFiles/Latex/MiKTeX/fo
 nts/type1/public/fontawesome/FontAwesome.pfb><C:/ProgramsFiles/Latex/MiKTeX/fon
 ts/type1/public/lm/lmss10.pfb><C:/ProgramsFiles/Latex/MiKTeX/fonts/type1/public
 /lm/lmss12.pfb><C:/ProgramsFiles/Latex/MiKTeX/fonts/type1/public/lm/lmssbx10.pf
-b><C:/ProgramsFiles/Latex/MiKTeX/fonts/type1/public/lm/lmsso10.pfb><C:/Programs
-Files/Latex/MiKTeX/fonts/type1/public/lm/lmsso9.pfb>
-Output written on Z_main.pdf (3 pages, 509297 bytes).
+b><C:/ProgramsFiles/Latex/MiKTeX/fonts/type1/public/lm/lmsso10.pfb>
+Output written on Z_main.pdf (2 pages, 474751 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
- 12 named destinations out of 1000 (max. 500000)
- 41546 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 69 PDF objects out of 1000 (max. 8388607)
+ 11 named destinations out of 1000 (max. 500000)
+ 33298 words of extra memory for PDF output out of 35830 (max. 10000000)
 
