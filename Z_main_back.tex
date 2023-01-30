@@ -8,7 +8,6 @@
 
 
 \documentclass[10pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
-% \documentclass{article}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
 
 
@@ -50,16 +49,15 @@
 %\usepackage{multibib}
 %\newcites{book,misc}{{Books},{Others}}
 
-\usepackage[verbose]{datatool}
-\usepackage{etoolbox}
+\usepackage{datatool}
 % \DTLsetseparator{|}
 % \usepackage{filecontents}
-% \begin{filecontents}{test2.csv}
-%     name,points
-%     John,172
-%     Sue,120
-%     Mike,64
-% \end{filecontents}
+\begin{filecontents}{test2.csv}
+    name,points
+    John,172
+    Sue,120
+    Mike,64
+\end{filecontents}
 
 % 1,2
 % 7Bioscience,79395
@@ -72,12 +70,27 @@
 %----------------------------------------------------------------------------------
 \begin{document}
 
+% \input{SanazBewerbungenTest.csv}
 
-\input{sections/stelleNow.tex}
-\stelle{\stelleHead}
-\input{letters/letterOpening.tex}
-\input{letters/standardLetter.tex}
-\input{sections/cv-MAIN.tex}
+
+% \DTLloaddb{bewerbungen}{SanazBewerbungenTest.csv}
+\DTLsetseparator{,}
+\DTLloaddb[noheader,keys={1,2}]{db}{test2.csv}
+\DTLrowcount{db}
+\DTLcolumncount{db}
+
+\DTLforeach{db}{
+    % \name = name
+    \name = 1
+    % \input{./sections/stelleAuto.tex}
+    % \input{letters/standardLetter.tex}
+    % \input{sections/cv-MAIN}
+}
+{
+% \arbeitgeber
+\DTLforeachkeyinrow{\thisValue}{~ \thisValue } \par
+% asd
+}
 
 
 

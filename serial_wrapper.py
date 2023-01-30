@@ -8,20 +8,27 @@ import numpy as np
 from PyPDF2 import PdfFileWriter, PdfFileReader
 # import ntpath
 # ntpath.realpath = ntpath.abspath
-import sys
+# import sys
+import argparse
 
-# from pydrive.auth import GoogleAuth
-# from pydrive.drive import GoogleDrive
+# # from pydrive.auth import GoogleAuth
+# # from pydrive.drive import GoogleDrive
 
 
-# gauth = GoogleAuth()           
-# drive = GoogleDrive(gauth)  
+# # gauth = GoogleAuth()           
+# # drive = GoogleDrive(gauth)  
 
 # print(f"Name of the script      : {sys.argv[0]=}")
 # print(f"Arguments of the script : {sys.argv[1:]=}")
 
+argParser = argparse.ArgumentParser()
+argParser.add_argument("-s", "--start",   default=1 , type=int,  help="number of applications to generate")
+argParser.add_argument("-e", "--employer",default='', type=str,  help="employer to be generated")
 
-
+args = argParser.parse_args()
+print(args)
+# if args.start       != 'None' : start=int(args.start)
+# if args.employer    != 'None' : buildEmployer=args.employer
 
 # quit()
 
@@ -71,7 +78,9 @@ def genStelleText(field,bewerbung):
 
 
 def makePDF():
-    texString = 'pdflatex.exe Z_main.tex'
+    osStr = str(os.name)
+    osSuf = {'posix': '', 'nt': '.exe'}
+    texString = 'pdflatex%s Z_main.tex' % osSuf[osStr]
     # texString = 'pdflatex.exe -jobname=%s -output-dir=outputs .\Z_main.tex' % bewerbung['firma'].replace(' ', '_')
     print(texString)
     os.system(texString)
@@ -145,14 +154,18 @@ def processPDF(bewerbung):
 
 
 
-start=1
+start=2
 # print("sys: %s" % sys.argv)
-if len(sys.argv) > 1 : start=int(sys.argv[1])
+# if len(sys.argv) > 1 : start=int(sys.argv[1])
+if args.start       != 'None' : start=int(args.start)
+if args.employer    != 'None' : buildEmployer=args.employer
+
 # print(start)
 # quit()
 
-for idx,bewerbung in df.iloc[-start:].iterrows():
+for idx,bewerbung in df.iloc[-args.start:].iterrows():
     print(idx)
+    if args.employer not in bewerbung['firma'] : continue 
     genStelleText(fields,bewerbung)
     makePDF()
     processPDF(bewerbung)

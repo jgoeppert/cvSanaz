@@ -1,0 +1,29 @@
+
+
+an
+
+\ifthenelse{ \equal{\kontakt} {none}}
+{ 
+    \renewcommand{\adresse}{\anschrift}
+    \renewcommand{\anrede}{Sehr geehrte Damen und Herren}
+}
+{
+    \renewcommand{\adresse}{\kontakt \\ \anschrift}
+    \ifthenelse{ \equal{\geschlecht} {Herr}}
+        {\renewcommand{\anrede}{Sehr geehrter \geschlecht~\kontakt}}
+        {\renewcommand{\anrede}{Sehr geehrte \geschlecht~\kontakt}}
+
+}
+
+
+
+%%%%%%%%%%%%%%% MANUELL
+% \renewcommand{\stelleText}{Biochemikerin für Proteinanalytik}
+% \renewcommand{\firma}{Phadia GmbH}
+% \renewcommand{\anschrift}{Munzinger Straße 7\\79111 Freiburg im Breisgau}
+
+% \renewcommand{\adresse}{\anschrift}
+% \renewcommand{\anrede}{Sehr geehrte Damen und Herren}
+
+
+
