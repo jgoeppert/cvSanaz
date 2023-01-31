@@ -1,4 +1,5 @@
-#!/bin/python3
+# !/bin/python3 
+
 
 import pandas as pd
 import os
@@ -27,7 +28,7 @@ import sys
 
 url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-JxpwsP1t5ceEK4esRpF32rTx1J5ztuvQvcmxEzMEAXzuYuODILMYWIbjiPvhErubapziUV4XbNxH/pub?gid=0&single=true&output=csv'
 print(url)
-df = pd.read_excel(r'./Sanaz Bewerbungen.xlsx',dtype=str)
+# df = pd.read_excel(r'./Sanaz Bewerbungen.xlsx',dtype=str)
 # df = pd.read_csv(r,dtype=str)
 df = pd.read_csv(url,dtype=str)
 # df = pd.read_csv(r'./SanazBewerbungen.csv')

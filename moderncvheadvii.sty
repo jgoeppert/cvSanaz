@@ -279,11 +279,13 @@
         ]%
     (name)
     {   \Large  \textbf{ \@firstname ~\@lastname\\ 
-      % \ifthenelse
-        % \vspace{1ex}
-        % % \small Angestrebte Position:\\
-        % % \@stelle\\
+      \ifthenelse{ \equal{\@stelle} {}}
+      {} { 
+        \vspace{1ex}
+        \small Angestrebte Position:\\
+        \@stelle
         % \normalsize{Angestrebte Position} 
+      }
     }
     };
     \begin{pgfonlayer}{bg}    % select the background layer
