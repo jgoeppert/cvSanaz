@@ -11,12 +11,12 @@ from PyPDF2 import PdfFileWriter, PdfFileReader
 # import sys
 import argparse
 
-# # from pydrive.auth import GoogleAuth
-# # from pydrive.drive import GoogleDrive
+from pydrive.auth import GoogleAuth
+from pydrive.drive import GoogleDrive
 
 
-# # gauth = GoogleAuth()           
-# # drive = GoogleDrive(gauth)  
+gauth = GoogleAuth()           
+drive = GoogleDrive(gauth)  
 
 # print(f"Name of the script      : {sys.argv[0]=}")
 # print(f"Arguments of the script : {sys.argv[1:]=}")
@@ -24,6 +24,7 @@ import argparse
 argParser = argparse.ArgumentParser()
 argParser.add_argument("-s", "--start",   default=1 , type=int,  help="number of applications to generate")
 argParser.add_argument("-e", "--employer",default='', type=str,  help="employer to be generated")
+argParser.add_argument("-p", "--skipPdf" ,default=False, type=bool,  help="employer to be generated")
 
 args = argParser.parse_args()
 print(args)
@@ -127,6 +128,7 @@ def processPDF(bewerbung):
     # print(bewName)
     # target = os.path.join(os.getcwd(), 'outputs', bewName)#[:82])
     target = os.path.join('outputs', bewPath)#[:82])
+    tPath = target
     shutil.rmtree(target, ignore_errors=True)
     os.mkdir(target)
     target=os.path.join(target, name)
@@ -151,6 +153,12 @@ def processPDF(bewerbung):
     with open(fName,'wb') as f: pdfWriter.write(f) 
     # pdfReader.close()
     # input(target)
+    upload_file_list = [tPath]
+    for upload_file in upload_file_list:
+        gfile = drive.CreateFile({'parents': [{'id': '1gNfkaIkhgM8SZYAITeFmCzAEq_o3QjVM'}]})
+        # Read file and set it as the content of this instance.
+        gfile.SetContentFile(upload_file)
+        gfile.Upload() # Upload the file.
 
 
 
@@ -167,7 +175,7 @@ for idx,bewerbung in df.iloc[-args.start:].iterrows():
     print(idx)
     if args.employer not in bewerbung['firma'] : continue 
     genStelleText(fields,bewerbung)
-    makePDF()
+    if not args.skipPdf : makePDF()
     processPDF(bewerbung)
 
 
