@@ -153,12 +153,12 @@ def processPDF(bewerbung):
     with open(fName,'wb') as f: pdfWriter.write(f) 
     # pdfReader.close()
     # input(target)
-    upload_file_list = [tPath]
-    for upload_file in upload_file_list:
-        gfile = drive.CreateFile({'parents': [{'id': '1gNfkaIkhgM8SZYAITeFmCzAEq_o3QjVM'}]})
-        # Read file and set it as the content of this instance.
-        gfile.SetContentFile(upload_file)
-        gfile.Upload() # Upload the file.
+    # upload_file_list = [tPath]
+    # for upload_file in upload_file_list:
+    #     gfile = drive.CreateFile({'parents': [{'id': '1gNfkaIkhgM8SZYAITeFmCzAEq_o3QjVM'}]})
+    #     # Read file and set it as the content of this instance.
+    #     gfile.SetContentFile(upload_file)
+    #     gfile.Upload() # Upload the file.
 
 
 
