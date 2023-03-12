@@ -49,6 +49,7 @@ df = df.fillna('')
 fields=[
     'lfd.Nr',
     'firma',
+    'firmaSatz',
     'land',
     'ortschaft',
     'strasse',

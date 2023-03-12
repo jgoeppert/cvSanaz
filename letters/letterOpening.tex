@@ -55,11 +55,15 @@
     \providecommand{\adresse}{\anschrift}
 }
 
+
+
+\ifdefempty{\firmaSat}{\def\firmaSatz \firma}{}
+
 \ifdefempty{\artikelFirma}
-    {\def\firmaText{bei \firma}}
+    {\def\firmaText{bei \firmaSatz}}
     {
-        \ifthenelse{\equal{\artikelFirma} {die}} {\def\firmaText{bei der \firma}}{}
-        \ifthenelse{\equal{\artikelFirma} {das}} {\def\firmaText{beim \firma}}{}
+        \ifthenelse{\equal{\artikelFirma} {die}} {\def\firmaText{bei der \firmaSatz}}{}
+        \ifthenelse{\equal{\artikelFirma} {das}} {\def\firmaText{beim \firmaSatz}}{}
     }
 
 
