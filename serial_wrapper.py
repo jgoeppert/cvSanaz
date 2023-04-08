@@ -5,7 +5,7 @@ import os
 import codecs 
 import shutil
 import numpy as np
-from PyPDF2 import PdfFileWriter, PdfFileReader
+from PyPDF2 import PdfWriter, PdfReader
 # import ntpath
 # ntpath.realpath = ntpath.abspath
 # import sys
@@ -35,7 +35,7 @@ print(args)
 
 url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-JxpwsP1t5ceEK4esRpF32rTx1J5ztuvQvcmxEzMEAXzuYuODILMYWIbjiPvhErubapziUV4XbNxH/pub?gid=0&single=true&output=csv'
 print(url)
-df = pd.read_excel(r'./Sanaz Bewerbungen.xlsx',dtype=str)
+# df = pd.read_excel(r'./Sanaz Bewerbungen.xlsx',dtype=str)
 # df = pd.read_csv(r,dtype=str)
 df = pd.read_csv(url,dtype=str)
 # df = pd.read_csv(r'./SanazBewerbungen.csv')
@@ -141,16 +141,16 @@ def processPDF(bewerbung):
     # input(target)
     print(targetF)
     shutil.copyfile(source,targetF)
-    pdfReader = PdfFileReader(open(targetF, "rb"))
-    pdfWriter = PdfFileWriter()
+    pdfReader = PdfReader(open(targetF, "rb"))
+    pdfWriter = PdfWriter()
     # fName = os.path.join(target,'Anschreiben_' + bewName + '.pdf')
     fName = target + '_Anschreiben.pdf'
-    for page in range(0,1) : pdfWriter.addPage(pdfReader.getPage(page))
+    for page in range(0,1) : pdfWriter.add_page(pdfReader.pages[page])
     with open(fName,'wb') as f: pdfWriter.write(f) 
-    pdfWriter = PdfFileWriter()
+    pdfWriter = PdfWriter()
     # fName = os.path.join(target,'Lebenslauf_' + bewName + '.pdf')
     fName = target + '_Lebenslauf.pdf'
-    for page in range(1,3) : pdfWriter.addPage(pdfReader.getPage(page))
+    for page in range(1,3) : pdfWriter.add_page(pdfReader.pages[page])
     with open(fName,'wb') as f: pdfWriter.write(f) 
     # pdfReader.close()
     # input(target)

@@ -57,7 +57,11 @@
 
 
 
-\ifdefempty{\firmaSat}{\def\firmaSatz \firma}{}
+\ifdefempty{\firmaSatz}{\def\firmaSatz{\firma}}{}
+
+
+% \ifdefempty{\firmaText}{\def\firmaT}
+
 
 \ifdefempty{\artikelFirma}
     {\def\firmaText{bei \firmaSatz}}
