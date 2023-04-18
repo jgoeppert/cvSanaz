@@ -63,6 +63,7 @@ fields=[
     'stelleText',
     'stelleHead',
     'artikelFirma',
+    'textEnde',
 ]
 
 def genStelleText(field,bewerbung):
@@ -72,6 +73,7 @@ def genStelleText(field,bewerbung):
         # print(bewerbung[field])
         val = str(bewerbung[field])
         val = replaceStringChars(val)
+        print("%20s: %s", (field,val))
         writeString = '\def\\' + field + '{%s}\n' % val
         # if val == nan: val = ''
         file.write(writeString)
@@ -176,6 +178,7 @@ for idx,bewerbung in df.iloc[-args.start:].iterrows():
     print(idx)
     if args.employer not in bewerbung['firma'] : continue 
     genStelleText(fields,bewerbung)
+    # quit()
     if not args.skipPdf : makePDF()
     processPDF(bewerbung)
 

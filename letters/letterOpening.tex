@@ -66,9 +66,14 @@
 \ifdefempty{\artikelFirma}
     {\def\firmaText{bei \firmaSatz}}
     {
-        \ifthenelse{\equal{\artikelFirma} {die}} {\def\firmaText{bei der \firmaSatz}}{}
-        \ifthenelse{\equal{\artikelFirma} {das}} {\def\firmaText{beim \firmaSatz}}{}
+        \ifthenelse{\equal{\artikelFirma} {die}} {\def\firmaText{bei der \firmaSatz}}{
+            \ifthenelse{\equal{\artikelFirma} {das}} {\def\firmaText{beim \firmaSatz}}{
+                \def\firmaText{bei \firmaSatz}
+            }
+        }
     }
+
+\ifdefempty{\textEnde}{\def\textEnde{was bei Ihrer Firma mit ISO-Normen in Verbindung steht.}}
 
 
 
