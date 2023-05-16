@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.3.24)  16 APR 2023 15:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.3.24)  16 MAY 2023 08:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1206,11 +1206,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 27789 strings out of 483057
- 483166 string characters out of 5962301
- 801811 words of memory out of 5000000
- 42151 multiletter control sequences out of 15000+600000
- 602217 words of font info for 88 fonts, out of 8000000 for 9000
+ 27778 strings out of 483057
+ 483026 string characters out of 5962301
+ 801810 words of memory out of 5000000
+ 42148 multiletter control sequences out of 15000+600000
+ 601797 words of font info for 84 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  68i,12n,64p,829b,855s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texlive/texmf-dist
@@ -1218,15 +1218,14 @@ Here is how much of TeX's memory you used:
 t/fonts/enc/dvips/base/8r.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/fo
 ntawesome/fontawesometwo.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/
 brushscr/BrushScriptX-Italic.pfa></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/fontawesome/FontAwesome.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/eurosym/feymr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr
-/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/pub
-lic/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmsso9.pfb>
-Output written on Z_main.pdf (3 pages, 495286 bytes).
+lic/fontawesome/FontAwesome.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.
+pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/
+type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmsso9.pfb>
+Output written on Z_main.pdf (3 pages, 489052 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 85 compressed objects within 1 object stream
+ 97 PDF objects out of 1000 (max. 8388607)
+ 82 compressed objects within 1 object stream
  12 named destinations out of 1000 (max. 500000)
  23626 words of extra memory for PDF output out of 24883 (max. 10000000)
 
