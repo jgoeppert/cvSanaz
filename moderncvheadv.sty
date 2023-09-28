@@ -96,7 +96,9 @@
       \ifthenelse{\isundefined{\@quote}}%
         {}%
         {\begin{minipage}{\quotewidth}\quotestyle{\@quote}\end{minipage}\\[2.5em]}}%
-  \par}% to avoid weird spacing bug at the first section if no blank line is left after \makecvhead
+  \par
+  \vskip{-10em}
+  }% to avoid weird spacing bug at the first section if no blank line is left after \makecvhead
 
 % underlying command to implement \makecvtitle, identical to \@cvitem from moderncvbodyv
 \let\standarddoublebackslash\\%
@@ -112,7 +114,9 @@
       &\begin{minipage}[t]{\maincolumnwidth}#3\end{minipage}%
       \\[#1]% the spacing needs to be inside the cell for the vertical rule to extend correctly
   \end{tabular}%
-  \par\@aftersectionfalse\ignorespaces}
+  \par\@aftersectionfalse\ignorespaces
+  \vskip{-10em}
+  }
 
 
 %-------------------------------------------------------------------------------

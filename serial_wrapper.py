@@ -124,7 +124,7 @@ def replaceStringChars(strIn):
 
 def processPDF(bewerbung):
     # input(bewerbung['firma'])
-    name = 'Sanaz_Goeppert_Asadollahpour'
+    name = 'Sanaz_Goeppert-A'
     bewPath = '%03d_%s_%s' % (int(bewerbung[fields[0]]), bewerbung['firma'], bewerbung['stelleText'][:9])
     bewPath = replacePathChars(bewPath)
     # bewName = replacePathChars('%s_%s' % (bewerbung['firma'],bewerbung['stelle Original']))
@@ -134,10 +134,14 @@ def processPDF(bewerbung):
     tPath = target
     shutil.rmtree(target, ignore_errors=True)
     os.mkdir(target)
-    target=os.path.join(target, name)
+    # target=os.path.join(target, name)
     # extender = '\\\\?'
     # targetF=os.path.join(target,bewName)
-    targetF=target + '_Bewerbung.pdf'
+    tf = 'Bewerbung_' + name + '_' + bewerbung['stelleText']
+    print(bewerbung)
+    tf = replacePathChars(tf)
+    targetF=os.path.join(target, tf)
+    targetF=targetF + '.pdf'
     # source = os.path.join(os.getcwd(), 'Z_main.pdf')
     source = 'Z_main.pdf'
     # input(target)
@@ -146,12 +150,21 @@ def processPDF(bewerbung):
     pdfReader = PdfReader(open(targetF, "rb"))
     pdfWriter = PdfWriter()
     # fName = os.path.join(target,'Anschreiben_' + bewName + '.pdf')
-    fName = target + '_Anschreiben.pdf'
+    tf = 'Bewerbungsschreiben_' + name + '_' + bewerbung['stelleText']
+    tf = replacePathChars(tf)
+    print(tf)
+    targetF=os.path.join(target, tf)
+    fName=targetF + '.pdf'
+    # fName = target + '_Anschreiben.pdf'
     for page in range(0,1) : pdfWriter.add_page(pdfReader.pages[page])
     with open(fName,'wb') as f: pdfWriter.write(f) 
     pdfWriter = PdfWriter()
     # fName = os.path.join(target,'Lebenslauf_' + bewName + '.pdf')
-    fName = target + '_Lebenslauf.pdf'
+    # fName = target + '_Lebenslauf.pdf'
+    tf = 'Lebenslauf_' + name + '_' + bewerbung['stelleText']
+    tf = replacePathChars(tf)
+    targetF=os.path.join(target, tf)
+    fName=targetF + '.pdf'
     for page in range(1,3) : pdfWriter.add_page(pdfReader.pages[page])
     with open(fName,'wb') as f: pdfWriter.write(f) 
     # pdfReader.close()

@@ -6,16 +6,10 @@
 \ifthenelse{ \equal{\typ} {forschung}}
 {   \input{sections/erfahrungForschung}
     \input{sections/bildungForschung}
-}{}
-\ifthenelse{ \equal{\typ} {Management}}
-{   \input{sections/erfahrung}
+}{
+    \input{sections/erfahrung}
     \input{sections/bildung}
-}{}
-\ifthenelse{ \equal{\typ} {Produktion}}
-{   \input{sections/erfahrung}
-    \input{sections/bildung}
-}{}
-
+}
 % \input{sections/erfahrungForschung}
     % \input{sections/bildungForschung}
 \input{sections/migration.tex}

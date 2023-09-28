@@ -188,8 +188,8 @@
 }
 
 \renewcommand*{\makeletterclosing}{
-  \@closing\\
-  \signIt
+  \@closing\\[1em]
+  % \signIt{}
   {\bfseries\@firstname~\@lastname}%
   \ifthenelse{\isundefined{\@enclosure}}{}{%
     \\%

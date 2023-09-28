@@ -256,12 +256,12 @@
 
 % \setlength{\parindent}{0pt}
 
-\pgfdeclarelayer{bg}    % declare background layer
-\pgfsetlayers{bg,main}  % set the order of the layers (main is the standard layer)
+\pgfdeclarelayer{background}    % declare background layer
+\pgfsetlayers{background,main}  % set the order of the layers (main is the standard layer)
 
 % \begin{tikzpicture}[remember picture,overlay]
 \begin{tikzpicture}
-    \usetikzlibrary{positioning,shapes.misc}
+  % [background rectangle/.style={fill=olive!45}, show background rectangle]
     % \draw (0,0) grid (10,-10);
     % \coordinate (ori) at ($(current page.north west)+(0,0)$);
     % \coordinate (ori) at (current page.north west);
@@ -287,7 +287,7 @@
       }
     }
     };
-    \begin{pgfonlayer}{bg}    % select the background layer
+    \begin{pgfonlayer}{background}    % select the background layer
     % \draw [fill = color1,draw=none] (name.north east) to[out=0,in=0,distance=2cm] (name.south east) -- (name.south west) -- ++ (-\the\dimexpr1in,0) |- cycle;
     \end{pgfonlayer}    % select the background layer
     % \draw [fill = color1,draw=none] (name.north west) to[out=180,in=180,distance=2cm] (name.south west);
@@ -319,9 +319,10 @@
     \coordinate[below= 1em of tmp] (tmp)  ;
     \node[anchor=north west, inner sep  = 0]  at (tmp) {
         \begin{tabular}{>{\bfseries}p{\tabWidthHeaders} p{\tabWidthContent}}
-            \ifthenelse{\isundefined{\@addresscity}}    {}  {Adresse                & \@addressstreet\\}%
-            \ifthenelse{\isundefined{\@addresscity}}    {}  {                       & \@addresscity \\}% \\
-            \ifthenelse{\isundefined{\@mobile}}         {}  {Mobil                  &  \@mobile \\}% \\
+          \ifthenelse{\isundefined{\@addresscity}}    {}  {Adresse                & \@addressstreet~--- \@addresscity}\\%
+          % \ifthenelse{\isundefined{\@addresscity}}    {}  {Adresse                & \@addressstreet\\}%
+          % \ifthenelse{\isundefined{\@addresscity}}    {}  {                       & \@addresscity \\}% \\
+          \ifthenelse{\isundefined{\@mobile}}         {}  {Mobil                  &  \@mobile \\}% \\
             \ifthenelse{\isundefined{\@email}}          {}  {E-Mail                 &  \@email \\}% \\
             % \ifthenelse{\isundefined{\@socialsdetails}} {}  {Social Media           &  \@socialsdetails \\}% \\
             Social Media           &
@@ -332,10 +333,8 @@
                 }
             \end{tabular}
         };
-
-
-
 \end{tikzpicture}
+% \vspace*{-4em}
 % }
 
 % \usebox{\headerbox}

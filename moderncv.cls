@@ -198,6 +198,8 @@
 
 \RequirePackage{tikz}
 \RequirePackage{calc}
+\usetikzlibrary{decorations, decorations.text,backgrounds}
+\usetikzlibrary{positioning,shapes.misc}
 % \RequirePackage{ifthen}
 % \RequirePackage{ragged2e}
 
@@ -489,17 +491,20 @@
 % \def\sigFont[1]{\calligra{#1}}
 
 \def\signIt{
-%   \\
-%   \vspace{0.125em}%
-  \rotatebox[origin=c]{2.5}{{\huge{\bsifamily{\@signature}}}}\\
-%   \vspace{0.5em}%
+  % \vskip{1.5em}%
+  % \rotatebox[origin=c]{2.5}{{\huge{\bsifamily{\@signature}}}}\\
+    % \rotatebox[origin=c]{2.5}{{\huge{\bsifamily{}}}}\\
+    % \vspace{1.5em}%
+  % \vspace{1.5em}%
+  {\bfseries \@firstname{}~\@lastname{}}
 }
 
 \newcommand*{\makesignature}{
     % \newsavebox{\sig}
     % \savebox{\sig}{
-      \textbf{Freiburg im Breisgau, \today} \newline
-      % \textbf{Freiburg im Breisgau, 3. November 2022} \newline
+      \textbf{Freiburg im Breisgau, \today} \\[1em]%\newline
+      % \textbf{Freiburg im Breisgau, 13.6.2023} \newline
+      % \vspace{5em}%
       \signIt{}
         % \vspace{1em}
         % \fjd{\@signature}
