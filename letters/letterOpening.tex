@@ -68,7 +68,9 @@
     {
         \ifthenelse{\equal{\artikelFirma} {die}} {\def\firmaText{bei der \firmaSatz}}{
             \ifthenelse{\equal{\artikelFirma} {das}} {\def\firmaText{beim \firmaSatz}}{
-                \def\firmaText{bei \firmaSatz}
+                \ifthenelse{\equal{\artikelFirma} {der}} {\def\firmaText{am \firmaSatz}}{
+                    \def\firmaText{bei \firmaSatz}
+                }
             }
         }
     }

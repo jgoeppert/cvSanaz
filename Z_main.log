@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.15)  28 SEP 2023 10:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.15)  5 OCT 2023 09:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1231,11 +1231,11 @@ Package rerunfilecheck Info: File `Z_main.out' has not changed.
 (rerunfilecheck)             Checksum: 68460DAFD2B7873880C7059F703782D6;889.
  ) 
 Here is how much of TeX's memory you used:
- 29665 strings out of 475189
- 549732 string characters out of 5763838
+ 29661 strings out of 475189
+ 549688 string characters out of 5763838
  1943254 words of memory out of 5000000
  50242 multiletter control sequences out of 15000+600000
- 625508 words of font info for 121 fonts, out of 8000000 for 9000
+ 625306 words of font info for 119 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,13n,101p,1003b,725s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/fontawesome/FontAwesom
@@ -1244,7 +1244,7 @@ r/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/te
 xlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/20
 23/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></usr/local/texlive/2023/texmf-
 dist/fonts/type1/public/lm/lmsso9.pfb>
-Output written on Z_main.pdf (3 pages, 490680 bytes).
+Output written on Z_main.pdf (3 pages, 490134 bytes).
 PDF statistics:
  99 PDF objects out of 1000 (max. 8388607)
  78 compressed objects within 1 object stream
