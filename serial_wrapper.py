@@ -85,7 +85,8 @@ def makePDF():
     osStr = str(os.name)
     osSuf = {'posix': '', 'nt': '.exe'}
     osPre = ''
-    if not shutil.which('pdflatex') == '' : osPre = '/usr/local/texlive/2023/bin/x86_64-linux/'    texString = 'pdflatex%s Z_main.tex' % osSuf[osStr]
+    if not shutil.which('pdflatex') == '' : osPre = '/usr/local/texlive/2023/bin/x86_64-linux/'
+    texString = 'pdflatex%s Z_main.tex' % osSuf[osStr]
     texString = '%spdflatex%s Z_main.tex' % (osPre, osSuf[osStr])
     # texString = 'pdflatex.exe -jobname=%s -output-dir=outputs .\Z_main.tex' % bewerbung['firma'].replace(' ', '_')
     print(texString)
