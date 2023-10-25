@@ -3,3 +3,6 @@
 *.log
 *.fls
 *.fdb_latexmk
+
+
+sections/stelleNow.tex
