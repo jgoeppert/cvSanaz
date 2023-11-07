@@ -3,7 +3,8 @@
 %-----       resume       ---------------------------------------------------------
 \makecvtitle%
 
-\ifthenelse{ \equal{\typ} {forschung}}
+% \ifthenelse{ \equal{\typ} {forschung}}
+\IfSubStr{\typ}{Forsch}
 {   \input{sections/erfahrungForschung}
     \input{sections/bildungForschung}
 }{
