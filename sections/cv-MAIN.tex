@@ -3,19 +3,54 @@
 %-----       resume       ---------------------------------------------------------
 \makecvtitle%
 
-% \ifthenelse{ \equal{\typ} {forschung}}
-\IfSubStr{\typ}{Forsch}
-{   \input{sections/erfahrungForschung}
-    \input{sections/bildungForschung}
-}{
-    \input{sections/erfahrung}
-    \input{sections/bildung}
-}
-% \input{sections/erfahrungForschung}
+% % \ifthenelse{ \equal{\typ} {forschung}}
+% \IfSubStr{\typ}{Forsch}
+% {   \input{sections/erfahrungForschung}
+%     \input{sections/bildungForschung}
+% }{
+%     \input{sections/erfahrung}
+%     \input{sections/bildung}
+% }
+% % \input{sections/erfahrungForschung}
     % \input{sections/bildungForschung}
-\input{sections/migration.tex}
-\input{sections/kenntnisse}
-\input{sections/qualifikationen}
+% \input{sections/migration.tex}
+% \input{sections/kenntnisse}
+% \input{sections/qualifikationen}
+
+
+\input{sections/erfahrung}
+
+\pagebreak
+\input{sections/bildung}
+
+\section{EDV-Kenntnisse}
+\cvitem{OS}{Mircosoft Windows (95 bis 10), Linux (verschiedene Distributionen)}
+\cvitem{Office}{Mircosoft Office (Word, Excel,PowerPoint), \LaTeX}
+\cvitem{Sprachen}{C, Assembler,Python, Java, Matlab, Mathematica}
+% \cvitem{Skriptsprachen}{Python, Java, Matlab, Mathematica}
+% \cvitem{Sprachen}{C, Assembler}
+\cvitem{IC Digital}{Cadence: Genus, Innovus, Voltus, Tempus; Synopsys Design Compiler; Xilinx ISE \& Vivado}
+\cvitem{IC Analog}{Cadence Virtuoso, Spectre, AMS, Ocean, Skill, Layouterfahrung}
+\cvitem{Elektronik}{(p)Spice, KiCAD, Altium Designer}
+
+\section{Management \& Administration}
+\cvitem{}{Projektmanagement}
+\cvitem{}{Förderlandschaft Deutschland \& EU}
+
+\section{Veröffentlichungen}
+\cvitem{BioCAS'23}{A Novel 130.1 pJ/decision
+Binary Tree Ensemble Classifier for an Energy Efficient Atrial Fibrillation Detecting
+ECG Processing System in 22nm FDSOI (Erstautor: Alexander Bleitner)}
+\cvitem{ESSCIRC'19}{Area-Constrained Multi-Source Power Management for Thermoelectric Energy Harvestin}
+\cvitem{JSSC'16}{Fully Integrated Startup at 70 mV of Boost Converters for Thermoelectric Energy Harvesting}
+\cvitem{DATE'10}{Timing Modeling for Digital Sub-Threshold Circuits (Erstautor: Niklas Lotze)}
+
+
+
+
+
+
+
 \closingSection{}
 % \input{sections/interessen}
 

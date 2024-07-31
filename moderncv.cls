@@ -155,8 +155,8 @@
           \newlength{\pagenumberwidth}%
           \settowidth{\pagenumberwidth}{\color{color2}\addressfont\itshape\strut\thepage/\pageref{lastpage}}%
           \fancypagestyle{plain}{%
-            % \fancyfoot[r]{\parbox[b]{\pagenumberwidth}{\color{color2}\pagenumberfont\strut\thepage/\pageref{lastpage}}}}% the parbox is required to ensure alignment with a possible center footer (e.g., as in the casual style)
-            \fancyfoot[r]{\parbox[b]{\pagenumberwidth}{\color{color2}\pagenumberfont\strut  }}}% the parbox is required to ensure alignment with a possible center footer (e.g., as in the casual style)
+            \fancyfoot[r]{\parbox[b]{\pagenumberwidth}{\color{color2}\pagenumberfont\strut\thepage/\pageref{lastpage}}}}% the parbox is required to ensure alignment with a possible center footer (e.g., as in the casual style)
+            % \fancyfoot[r]{\parbox[b]{\pagenumberwidth}{\color{color2}\pagenumberfont\strut  }}}% the parbox is required to ensure alignment with a possible center footer (e.g., as in the casual style)
           \pagestyle{plain}}{}}\fi}%
   \AtEndDocument{\label{lastpage}}}
 \pagestyle{plain}
@@ -492,21 +492,30 @@
 
 \def\signIt{
   % \vskip{1.5em}%
-  % \rotatebox[origin=c]{2.5}{{\huge{\bsifamily{\@signature}}}}\\
+  \\
+%   \vspace{3em}%
+  \\
+%   \rotatebox[origin=c]{2.5}{{\huge{\bsifamily{\@signature}}}}
+  \\
+  \\
     % \rotatebox[origin=c]{2.5}{{\huge{\bsifamily{}}}}\\
     % \vspace{1.5em}%
   % \vspace{1.5em}%
+%   \vspace{3em}%
   {\bfseries \@firstname{}~\@lastname{}}
-}
+%   \vspace{3em}%
+  }
 
 \newcommand*{\makesignature}{
     % \newsavebox{\sig}
     % \savebox{\sig}{
-      \textbf{Freiburg im Breisgau, \today} \\[1em]%\newline
+    \vspace{3em}%
+    %   \\[1em]
+    \textbf{Freiburg im Breisgau, \today} 
       % \textbf{Freiburg im Breisgau, 13.6.2023} \newline
       % \vspace{5em}%
       \signIt{}
-        % \vspace{1em}
+      % \vspace{1em}
         % \fjd{\@signature}
         % \Huge\calligra{\@signature}
     % }
