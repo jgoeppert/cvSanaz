@@ -128,7 +128,8 @@ def replaceStringChars(strIn):
 def processPDF(bewerbung):
     # input(bewerbung['firma'])
     name = 'Sanaz_Goeppert-A'
-    bewPath = '%03d_%s_%s' % (int(bewerbung[fields[0]]), bewerbung['firma'], bewerbung['stelleText'][:9])
+    if bewerbung['stelleText'] != '' : bewPath = '%03d_%s_%s' % (int(bewerbung[fields[0]]), bewerbung['firma'], bewerbung['stelleText'][:9])
+    else : bewPath = '%03d_%s' % (int(bewerbung[fields[0]]), bewerbung['firma'])
     bewPath = replacePathChars(bewPath)
     # bewName = replacePathChars('%s_%s' % (bewerbung['firma'],bewerbung['stelle Original']))
     # print(bewName)
