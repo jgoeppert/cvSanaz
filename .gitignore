@@ -3,6 +3,8 @@
 *.log
 *.fls
 *.fdb_latexmk
-
+.p_env
+*.out
+*.synctex.gz
 
 sections/stelleNow.tex
