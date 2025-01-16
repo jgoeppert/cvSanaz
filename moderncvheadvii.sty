@@ -283,7 +283,7 @@
     {   \Large  \textbf{ \@firstname ~\@lastname\\ 
       \ifthenelse {\equal{\@stelle}{\empty}}{}{
         \vspace{1ex}
-        \small Angestrebte Position:\\
+        \small \ifthenelse {\equal{\english}{\empty}}{Angestrebte Position}{Desired Position}:\\
         \@stelle\\
         % \normalsize{Angestrebte Position} 
       }
@@ -298,37 +298,37 @@
     \coordinate (tmp) at (\tabPos,0);
     \node[anchor=north west,inner sep=0] at (tmp)  {\titlestyle{\@title}};
     \coordinate[below=1.75cm of tmp] (tmp)  ;
-    \node[anchor=south west, text=color1, inner sep  = 0]  at (tmp) {\large  \textbf{\"Uber mich}};
+    \node[anchor=south west, text=color1, inner sep  = 0]  at (tmp) {\large  \textbf{\ifthenelse {\equal{\english}{\empty}}{\"Uber mich}{About Me}}};
     \draw[color1,line width = 2pt] (tmp)++(0,-2pt) -- ++ (\tabWidth,0);
 
     \coordinate[below= 1em of tmp] (tmp)  ;
     \node[anchor=north west, inner sep  = 0] (tmp) at (tmp) {
         \begin{tabular}{>{\bfseries}p{\tabWidthHeaders}p{\tabWidthContent}}
-            Geboren am                                                              &  9.9.1988\\
-            Familienstand                                                           &  verheiratet\\
-            \ifthenelse{\isundefined{\@staatsN}}    {}  {Staatsangeh\"origkeit      & \@staatsN\\}%
-            \ifthenelse{\isundefined{\@staatsF}}    {}  {                           & \@staatsF \\}% \\
+          \ifthenelse {\equal{\english}{\empty}}{Geboren am}{Birthday}              &  \ifthenelse {\equal{\english}{\empty}}{6. November 1984}{November 6'th, 1984}\\
+          \ifthenelse {\equal{\english}{\empty}}{Familienstand}{Marital Status}     &  \ifthenelse {\equal{\english}{\empty}}{verheiratet}{married}\\
+            \ifthenelse{\isundefined{\@staatsN}}    {}  {\ifthenelse {\equal{\english}{\empty}}{Staatsangeh\"origkeit}{Nationality}      & \@staatsN\\}%
+            % \ifthenelse{\isundefined{\@staatsF}}    {}  {                           & \@staatsF \\}% \\
             % \ifthenelse{\isundefined{\@aufenthalt}} {}  {Aufenthaltserlaubnis       &  bis \@aufenthalt \\}% \\
-            \ifthenelse{\isundefined{\@aufenthalt}} {}  {Aufenthalts- und \newline Arbeitserlaubnis       &  bis \@aufenthalt \\}% \\
-            \ifthenelse{\isundefined{\@strengths}}  {}  {St\"arken                  &  \@strengths}
+            % \ifthenelse{\isundefined{\@aufenthalt}} {}  {Aufenthalts- und \newline Arbeitserlaubnis       &  bis \@aufenthalt \\}% \\
+            \ifthenelse{\isundefined{\@strengths}}  {}  {\ifthenelse {\equal{\english}{\empty}}{St\"arken}{Strenghts} &  \@strengths}
         \end{tabular}
         };
 
 
     \coordinate[below = 1em of tmp.south west] (tmp)  ;
-    \node[anchor=south west, text=color1, inner sep  = 0]  at (tmp) {\large  \textbf{Konakt}};
+    \node[anchor=south west, text=color1, inner sep  = 0]  at (tmp) {\large  \textbf{\ifthenelse {\equal{\english}{\empty}}{Konakt}{Contact}}};
     \draw[color1,line width = 2pt] (tmp)++(0,-2pt) -- ++ (\tabWidth,0);
     \coordinate[below= 1em of tmp] (tmp)  ;
     \node[anchor=north west, inner sep  = 0]  at (tmp) {
         \begin{tabular}{>{\bfseries}p{\tabWidthHeaders} p{\tabWidthContent}}
-          \ifthenelse{\isundefined{\@addresscity}}    {}  {Adresse                & \@addressstreet~--- \@addresscity}\\%
-          % \ifthenelse{\isundefined{\@addresscity}}    {}  {Adresse                & \@addressstreet\\}%
-          % \ifthenelse{\isundefined{\@addresscity}}    {}  {                       & \@addresscity \\}% \\
-          \ifthenelse{\isundefined{\@mobile}}         {}  {Mobil                  &  \@mobile \\}% \\
+          % \ifthenelse{\isundefined{\@addresscity}}    {}  {Adresse                & \@addressstreet~--- \@addresscity}\\%
+          \ifthenelse{\isundefined{\@addressstreet}}    {}  {\ifthenelse {\equal{\english}{\empty}}{Adresse}{Address}                & \@addressstreet\\}%
+          \ifthenelse{\isundefined{\@addresscity}}    {}  {                       & \@addresscity \\}% \\
+          \ifthenelse{\isundefined{\@mobile}}         {}  {\ifthenelse {\equal{\english}{\empty}}{Mobil}{Mobile}                  &  \@mobile \\}% \\
             \ifthenelse{\isundefined{\@email}}          {}  {E-Mail                 &  \@email \\}% \\
             % \ifthenelse{\isundefined{\@socialsdetails}} {}  {Social Media           &  \@socialsdetails \\}% \\
             Social Media           &
-                \foreach \n in {0,...,1}{
+                \foreach \n in {0,...,0}{
                     \csname\collectiongetkey{socials}{\n}socialsymbol\endcsname
                     \collectiongetitem{socials}{\n}
                     \newline

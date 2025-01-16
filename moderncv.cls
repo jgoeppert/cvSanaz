@@ -492,11 +492,11 @@
 
 \def\signIt{
   % \vskip{1.5em}%
-  \\
+  % \\
 %   \vspace{3em}%
   \\
 %   \rotatebox[origin=c]{2.5}{{\huge{\bsifamily{\@signature}}}}
-  \\
+  % \\
   \\
     % \rotatebox[origin=c]{2.5}{{\huge{\bsifamily{}}}}\\
     % \vspace{1.5em}%

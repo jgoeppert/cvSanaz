@@ -1,8 +1,8 @@
 
 % personal data
 \name{Jacob}{Göppert}
-\title{Lebenslauf}                               % optional, remove / comment the line if not wanted
-\address{Dunantstra\ss e 5}{79110 Freiburg}{}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+\ifthenelse {\equal{\english}{\empty}}{\title{Lebenslauf}}{\title{Curriculum Vitae}}
+\ifthenelse {\equal{\english}{\empty}}{\address{Merzhauser Stra\ss e 159F}{79100 Freiburg}{}}{\address{Merzhauser Stra\ss e 159F}{79100 Freiburg, Germany}{}}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
 \phone[mobile]{+49~(176)~238~13~212}                   % optional, remove / comment the line if not wanted
 % \email{sanaz.a89@yahoo.com}                               % optional, remove / comment the line if not wanted
 % \email{\normalsize{sanaz.goeppert-asadollahpour@web.de}}                               % optional, remove / comment the line if not wanted
@@ -13,8 +13,9 @@
 
 %\homepage{www.johndoe.com}                         % optional, remove / comment the line if not wanted
 %\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
-% \photo[3.5cm][0.25cm]{Jacob-pic}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
-\photo[64pt][0.4pt]{Jacob-pic}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+\photo[6cm][0.25cm]{Seehstern_7797}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+% \photo[5cm][0.25cm]{Jacob-pic}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+% \photo[64pt][0.4pt]{Jacob-pic}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
 
 %\stelle{Chemikerin als Manager von Analytik-Dienstleistungen}
 % \stelle{Biochemiker- PCR Assays (m/w/d) Referenznummer: DES00220220407}
@@ -24,14 +25,12 @@
 
 
 %
-\staats{iranisch}{
-    deutsch: Antrag gestellt im Januar 2023 
-    }
-\aufenthalt{02/2024 (Deutschland) --- ehebasiert, Verlängerung unproblematisch}
+\ifthenelse {\equal{\english}{\empty}}{\staats{deutsch}}{\staats{german}}
 %\strengths{Züverlässig,kommunikativ,Flexibel}{organisiert,autodidaktisch }
-\strengths{zuverlässig, kommunikativ, flexibel, \newline organisiert, autodidaktisch }
+\ifthenelse {\equal{\english}{\empty}}{\strengths{analytisch, ausdauernd, konsequent}}{\strengths{analytical, enduring, determined}}
 
 
+\social[linkedin]{jacob-goeppert}
 % \social[linkedin]{sanaz-goeppert-asadollahpour}
 % \social[facebook]{face}
 % \social[xing]{Sanaz\_GoeppertAsadollahpour}
