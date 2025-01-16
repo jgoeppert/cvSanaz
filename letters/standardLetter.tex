@@ -6,101 +6,76 @@
 \opening{\anrede{},}
 \date{\today}
 %\date{19. September 2023}
-\closing{Mit freundlichen Grüßen}
-\enclosure[Anhang]{Lebenslauf, Zeugnisse, Zertifikate}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
-\lettertitle{Bewerbung}
+\ifthenelse {\equal{\english}{\empty}}{
+  \lettertitle{Bewerbung}
+  \closing{Mit freundlichen Grüßen}
+  \enclosure[Anhang]{Lebenslauf, Zeugnisse, Zertifikate}          % use an 
+  \def\chair{Fritz-Hüttinger-Professur für Mikroelektronik}
+}{
+  \lettertitle{Application}
+  \closing{Kind Regards}
+  \def\chair{Fritz Hüttinger Chair of Microelectronics}
+  \enclosure[Attached]{Resume, Diploma, Certificates}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
+}
+
+
 \makelettertitle
 \justifying
 
 
+with great interest, I noticed the posted position as \stelleText~\firmaText~. After finally submitting the PhD-thesis I started in 2010 at Prof. Dr.-Ing Yiannos Manoli's \chair, which I intend to defend in the upcoming months, I can look back at over 14 years of research on integrated circuits and ASIC design from develpong system concepts over implementation towards successful tapeout all the way through to characterizing the final product. While activities in the academic domain with publications in IEEE's flagship journal on integrated circuits dominated the years I enjoyed at the university, I already was able to gleam first insights into the industrial mindset. Contributing to or even headlining industry-focused research projects with partners such as ST Microelectronics, XFAB, or Bosch Sensortec
 
-% {\setlength{\parindent}{0cm}
-%Bei der Suche nach meiner ersten Industrieanstellung nach meiner Dissertation bin ich auf ihre Ausschreibung Marketingmanagerin gestoßen. 
-% Im Verlauf meiner Doktorarbeit konnte ich meine Begeisterung für hoch-spezifische und maßgeschneiderte Lösungen für komplexe Problemstellungen in der Chemie weiter ausbauen. Bereits in meiner Dissertation war ich stark an konkreten Ergebnissen interessiert, und ich möchte in meiner nächsten beruflichen Tätigkeit diese Produkte nicht nur herstellen, sondern auf den Markt begleiten. Daher reizt mich die ausgeschriebene Stelle als XXX sehr, die diese beiden Aspekte vereint. (Ruf am Institut bezüglich Betriebsklima als KMU?)\par
-% Derzeit befinde ich in der Endphase meiner Dissertation, die ich voraussichtlich Mitte 2023 abschließen werde.
-ich möchte mich auf die ausgeschriebene Stelle als \stelleText~\firmaText~bewerben. Ich habe von Mitte 2017 bis Oktober 2023 an meiner Dissertation im Bereich der Kristallografie von Proteinen des \mbox{\textit{A. aeolicus}} Bakteriums zur Untersuchung des Leigh-Syndroms unter der Leitung von Professor Plattner und Professor Friedrich an den Instituten für organische Chemie und für Biochemie gearbeitet. 
-% Mein Aufgabenbereich reicht dabei von der  Mutationen Anzucht von Bakterien bis zur Auswertung und Aufbereitung von Kristallografiedaten erzeugter  Proteine.\par
-Mein Aufgabenbereich reichte dabei vom Einbringen von Mutationen in Plasmide und der Anzucht von Bakterien bis zur Auswertung und Aufbereitung von Kristallografiedaten der erzeugten Proteine. 
-Meine Dissertation habe ich am 6. September 2023 erfolgreich verteidigt, und Ende Oktober 2023 wurde mir der erste offizielle Nachweis übergeben. \par
-% Bis Ende Oktober 2023 bin ich weiterhin an der Universität Freiburg angestellt,
- % Meine Arbeit deckt das gesamte Spektrum der Proteinherstellung ab und stellt somit eine gute Grundlage für die ausgeschriebene Stelle dar. 
-\ifthenelse{\equal{\typ} {Lehre}}
-    {Bereits in meiner Zeit als Studentin in meiner Heimat und insbesondere während meiner Dissertation an der Universität Freiburg habe ich den Hochschulbetrieb kennen und schätzen gelernt. Während meiner Doktorarbeit war ich intensiv in den deutschsprachigen Lehrbetrieb eingebunden, im Rahmen unterschiedlicher Laborpraktika, die ich teilweise in kompletter Eigenverantwortung selbstständig planen und durchführen konnte. Dabei konnte ich aufschlussreiche Erfahrungen im direkten Umgang mit Studierenden und ihren Problemen im Rahmen des Studiums sammeln, von den ersten Semestern bis hin zu den letzten Veranstaltungen vor dem Abschluss. Auch Erfahrungen aus meiner eigenen, nicht zwingend typischen, Biografie können im Rahmen der Studienberatung sehr wertvoll sein.}{}
-\ifthenelse{\equal{\typ} {ForschUni}}
-    {Während meiner intensiven Forschungsarbeit habe ich meine Begeisterung für wissenschaftliche Tätigkeiten weiter vertieft und eine tiefgreifende Faszination für die Biochemie entwickelt, die als Brücke zwischen Grundlagenforschung und den Life Sciences fungiert. An der Forschung im akademischen Umfeld reizt mich weiterhin die intensive Auseinandersetzung mit spezifischen Problemstellungen sowie die vorhergehende Analyse des aktuellen Stands der Forschung und die anschließende Weiterverbreitung und Diskussion der erzielten Resultate in einer engagierten Community. Ich freue mich darauf, meine Expertise und Leidenschaft in Ihrem Institut einzubringen und gemeinsam erfolgreich zu sein.}{}
-\ifthenelse{\equal{\typ} {ForschMang}}
-    {Während meiner intensiven Forschungsarbeit habe ich meine Begeisterung für wissenschaftliche Tätigkeiten weiter vertieft und eine tiefgreifende Faszination für die Biochemie entwickelt, die als Brücke zwischen Grundlagenforschung und den Life Sciences fungiert. Meine Fähigkeit zur effektiven Projektplanung und -durchführung konnte ich bei der Leitung des Fortgeschrittenen Praktikums ''Organische Chemie'' demonstrieren. Für diese einmonatige Blockveranstaltung musste ich eigenverantwortlich Chemikalien, Laborausrüstung und Aktivitäten der Betreuer koordinieren. Diese Erfahrungen machen mich zu einer wertvollen Ergänzung für Ihr Team und Ihr Unternehmen.}{}
-\ifthenelse{\equal{\typ} {ForschInd}}
-    {Während meiner intensiven Forschungsarbeit habe ich meine Begeisterung für wissenschaftliche Tätigkeiten weiter vertieft und eine tiefgreifende Faszination für die Biochemie entwickelt, die als Brücke zwischen Grundlagenforschung und den Life Sciences fungiert. An der Forschung im industriellen Umfeld reizt mich insbesondere die Perspektive, die Ergebnisse meiner Arbeit in die Entwicklung neuer Produkte umzusetzen und diese schließlich in den Händen unserer Kunden zu sehen. Die Möglichkeit, in einem unternehmerischen Kontext an innovativen Lösungen zu arbeiten und die Produkte realisiert zu sehen, ist für mich äußerst motivierend. Ich freue mich darauf, meine Expertise und Leidenschaft in Ihrem Unternehmen einzubringen und gemeinsam erfolgreich zu sein.}{}
-\ifthenelse{\equal{\typ} {Management}}
-    {Bereits in meiner Dissertationszeit war ich stark an konkreten Ergebnissen interessiert und ich möchte in meiner nächsten beruflichen Tätigkeit nicht nur Produkte im Frühstadium entwickeln, sondern diese auch wirtschaftlich produktiv zum Einsatz bringen. Meine Fähigkeit zur effektiven Projektplanung und -durchführung konnte ich bei der Leitung des Fortgeschrittenen Praktikums ''Organische Chemie'' demonstrieren. Für diese einmonatige Blockveranstaltung musste ich eigenverantwortlich Chemikalien, Laborausrüstung und Aktivitäten der Betreuer koordinieren. Diese Erfahrungen machen mich zu einer wertvollen Ergänzung für Ihr Team und Ihr Unternehmen.
-    % Erste wertvolle Erfahrungen in diese Richtung konnte ich bei der Leitung insbesondere des Fortgeschrittenen Praktikums "organische Chemnie" sammeln. Bei dieser einmonatigen Blockveranstaltung mussten die erforderlichen Chemikalien und Mengen sowie die Laborausrüstung für unterschiedliche Experimente in kompletter Eigenverantwortung zunächst ermittelt und schließlich termingerecht zur Verfügung gestellt werden. Dabei wurden auch die Aktivitäten der unterstellten Betreuer und Assitenten zugewiesen, koordiniert und überwacht.   %Aus diesem Grund habe ich bereits erfolgreich einen GMP-Kurs absolviert, und finde ich die ausgeschriebene Position sehr reizvoll.
-    \par }{}
-\ifthenelse{\equal{\typ} {Produktion}}
-    {Bereits in meiner Dissertationszeit war ich stark an konkreten Ergebnissen interessiert und ich möchte in meiner nächsten beruflichen Tätigkeit nicht nur Produkte entwickeln, sondern diese auch wirtschaftlich produktiv zum Einsatz bringen. Aus diesem Grund habe ich bereits erfolgreich einen GMP-Kurs absolviert, und finde ich die ausgeschriebene Position sehr reizvoll.\par }{}
-\ifthenelse{\equal{\typ} {QA}}
-    {Während meiner Forschungstätigkeit habe ich umfangreiche Erfahrungen in der chemischen und biochemischen Analytik gesammelt. Diese Kenntnisse haben mir gezeigt, wie entscheidend Qualitätssicherung in der Chemieindustrie ist, um hochwertige und sichere Produkte zu gewährleisten. Aus diesem Grund habe ich bereits erfolgreich einen GMP-Kurs absolviert. Ich bin davon überzeugt, dass meine wissenschaftliche Expertise und meine Fähigkeit zur Problemlösung eine wertvolle Bereicherung für Ihr Quality Assurance Team darstellen werden. Ich freue mich darauf, mich schnell in diese neue Rolle einzuarbeiten und zur Qualitätssicherung in Ihrem Unternehmen beizutragen.\par }{}
-\ifthenelse{\equal{\typ} {QM}}
-    {Während meiner Forschungstätigkeit konnte ich umfangreiche Erfahrungen in der chemischen und biochemischen Analytik sammeln. Diese Erkenntnisse haben mir verdeutlicht, wie essenziell Qualitätsmanagement in der Chemieindustrie ist, um hochwertige und sichere Produkte zu gewährleisten. In diesem Zusammenhang habe ich bereits erfolgreich an einem GMP-Kurs teilgenommen. Ich bin fest davon überzeugt, dass meine wissenschaftliche Expertise und meine Fähigkeit zur Problemlösung eine wertvolle Bereicherung für Ihr Qualitätsmanagement Team darstellen werden. Ich freue mich darauf, mich zügig in diese neue Rolle einzuarbeiten und zur Qualitätssteigerung in Ihrem Unternehmen beizutragen.\par }{}
-\ifthenelse{\equal{\typ} {QMMang}}
-    {Während meiner Forschungstätigkeit konnte ich umfangreiche Erfahrungen in der chemischen und biochemischen Analytik sammeln. Diese Erkenntnisse haben mir verdeutlicht, wie essenziell Qualitätsmanagement in der Chemieindustrie ist, um hochwertige und sichere Produkte zu gewährleisten. In diesem Zusammenhang habe ich bereits erfolgreich an einem GMP-Kurs teilgenommen, und ich konnte meine Fähigkeit zur effektiven Projektplanung \mbox{und -durchführung} ich bei der Leitung des Fortgeschrittenen Praktikums ''Organische Chemie'' demonstrieren. Für diese einmonatige Blockveranstaltung musste ich eigenverantwortlich Chemikalien, Laborausrüstung und Aktivitäten der Betreuer koordinieren. Ich bin fest davon überzeugt, dass meine wissenschaftliche Expertise und meine Fähigkeit zur Problemlösung eine wertvolle Bereicherung für Ihr Qualitätsmanagement Team darstellen werden. Ich freue mich darauf, mich zügig in diese neue Rolle einzuarbeiten und zur Qualitätssteigerung in Ihrem Unternehmen beizutragen.\par }{}
-\ifthenelse{\equal{\typ} {ManagementSicherheit}}
-    {Bereits in meiner Dissertationszeit konnte ich mich beim Umgang mit teils höchst kritischen biologischen Substanzen mit dem Problemkomplex des sicherheitskritischen Arbeitens aus Anwederperspektive intensiv auseinandersetzen. Außerdem haben mich Sicherheitsaspekte, die ich in allen betreuten Laborpraktika den Studierenden vermitteln, und in den eigenständig geplanten teilweise selbst erarbeiten oder zumindest pflegen musste, stets fasziniert. Daher finde ich die ausgeschriebene Stelle sehr reizvoll. \par }{}
+  % Ich habe von Mitte 2017 bis Oktober 2023 an meiner Dissertation im Bereich der Kristallografie von Proteinen des \mbox{\textit{A. aeolicus}} Bakteriums zur Untersuchung des Leigh-Syndroms unter der Leitung von Professor Plattner und Professor Friedrich an den Instituten für organische Chemie und für Biochemie gearbeitet. 
 
-\ifthenelse{\equal{\typ} {Marketing}}
-    {Während meiner Doktorarbeit habe ich tiefgreifende Einblicke in komplexe wissenschaftliche Prozesse erhalten und gelernt, wie wichtig es ist, wissenschaftliche Erkenntnisse erfolgreich in der akademischen Welt zu etablieren. Diese Erfahrung hat mir verdeutlicht, wie entscheidend der Bereich Market Access ist, um Produkte in der pharmazeutischen und chemischen Industrie erfolgreich zu vermarkten und sicherzustellen, dass sie den Bedürfnissen der Zielgruppen gerecht werden.\par}{}
+% ich möchte mich auf die ausgeschriebene Stelle als \stelleText~\firmaText~bewerben. Ich habe von Mitte 2017 bis Oktober 2023 an meiner Dissertation im Bereich der Kristallografie von Proteinen des \mbox{\textit{A. aeolicus}} Bakteriums zur Untersuchung des Leigh-Syndroms unter der Leitung von Professor Plattner und Professor Friedrich an den Instituten für organische Chemie und für Biochemie gearbeitet. 
+% Mein Aufgabenbereich reichte dabei vom Einbringen von Mutationen in Plasmide und der Anzucht von Bakterien bis zur Auswertung und Aufbereitung von Kristallografiedaten der erzeugten Proteine. 
+% Meine Dissertation habe ich am 6. September 2023 erfolgreich verteidigt, und Ende Oktober 2023 wurde mir der erste offizielle Nachweis übergeben. \par
+% \ifthenelse{\equal{\typ} {Lehre}}
+%     {Bereits in meiner Zeit als Studentin in meiner Heimat und insbesondere während meiner Dissertation an der Universität Freiburg habe ich den Hochschulbetrieb kennen und schätzen gelernt. Während meiner Doktorarbeit war ich intensiv in den deutschsprachigen Lehrbetrieb eingebunden, im Rahmen unterschiedlicher Laborpraktika, die ich teilweise in kompletter Eigenverantwortung selbstständig planen und durchführen konnte. Dabei konnte ich aufschlussreiche Erfahrungen im direkten Umgang mit Studierenden und ihren Problemen im Rahmen des Studiums sammeln, von den ersten Semestern bis hin zu den letzten Veranstaltungen vor dem Abschluss. Auch Erfahrungen aus meiner eigenen, nicht zwingend typischen, Biografie können im Rahmen der Studienberatung sehr wertvoll sein.}{}
+% \ifthenelse{\equal{\typ} {ForschUni}}
+%     {Während meiner intensiven Forschungsarbeit habe ich meine Begeisterung für wissenschaftliche Tätigkeiten weiter vertieft und eine tiefgreifende Faszination für die Biochemie entwickelt, die als Brücke zwischen Grundlagenforschung und den Life Sciences fungiert. An der Forschung im akademischen Umfeld reizt mich weiterhin die intensive Auseinandersetzung mit spezifischen Problemstellungen sowie die vorhergehende Analyse des aktuellen Stands der Forschung und die anschließende Weiterverbreitung und Diskussion der erzielten Resultate in einer engagierten Community. Ich freue mich darauf, meine Expertise und Leidenschaft in Ihrem Institut einzubringen und gemeinsam erfolgreich zu sein.}{}
+% \ifthenelse{\equal{\typ} {ForschMang}}
+%     {Während meiner intensiven Forschungsarbeit habe ich meine Begeisterung für wissenschaftliche Tätigkeiten weiter vertieft und eine tiefgreifende Faszination für die Biochemie entwickelt, die als Brücke zwischen Grundlagenforschung und den Life Sciences fungiert. Meine Fähigkeit zur effektiven Projektplanung und -durchführung konnte ich bei der Leitung des Fortgeschrittenen Praktikums ''Organische Chemie'' demonstrieren. Für diese einmonatige Blockveranstaltung musste ich eigenverantwortlich Chemikalien, Laborausrüstung und Aktivitäten der Betreuer koordinieren. Diese Erfahrungen machen mich zu einer wertvollen Ergänzung für Ihr Team und Ihr Unternehmen.}{}
+% \ifthenelse{\equal{\typ} {ForschInd}}
+%     {Während meiner intensiven Forschungsarbeit habe ich meine Begeisterung für wissenschaftliche Tätigkeiten weiter vertieft und eine tiefgreifende Faszination für die Biochemie entwickelt, die als Brücke zwischen Grundlagenforschung und den Life Sciences fungiert. An der Forschung im industriellen Umfeld reizt mich insbesondere die Perspektive, die Ergebnisse meiner Arbeit in die Entwicklung neuer Produkte umzusetzen und diese schließlich in den Händen unserer Kunden zu sehen. Die Möglichkeit, in einem unternehmerischen Kontext an innovativen Lösungen zu arbeiten und die Produkte realisiert zu sehen, ist für mich äußerst motivierend. Ich freue mich darauf, meine Expertise und Leidenschaft in Ihrem Unternehmen einzubringen und gemeinsam erfolgreich zu sein.}{}
+% \ifthenelse{\equal{\typ} {Management}}
+%     {Bereits in meiner Dissertationszeit war ich stark an konkreten Ergebnissen interessiert und ich möchte in meiner nächsten beruflichen Tätigkeit nicht nur Produkte im Frühstadium entwickeln, sondern diese auch wirtschaftlich produktiv zum Einsatz bringen. Meine Fähigkeit zur effektiven Projektplanung und -durchführung konnte ich bei der Leitung des Fortgeschrittenen Praktikums ''Organische Chemie'' demonstrieren. Für diese einmonatige Blockveranstaltung musste ich eigenverantwortlich Chemikalien, Laborausrüstung und Aktivitäten der Betreuer koordinieren. Diese Erfahrungen machen mich zu einer wertvollen Ergänzung für Ihr Team und Ihr Unternehmen.
+%     % Erste wertvolle Erfahrungen in diese Richtung konnte ich bei der Leitung insbesondere des Fortgeschrittenen Praktikums "organische Chemnie" sammeln. Bei dieser einmonatigen Blockveranstaltung mussten die erforderlichen Chemikalien und Mengen sowie die Laborausrüstung für unterschiedliche Experimente in kompletter Eigenverantwortung zunächst ermittelt und schließlich termingerecht zur Verfügung gestellt werden. Dabei wurden auch die Aktivitäten der unterstellten Betreuer und Assitenten zugewiesen, koordiniert und überwacht.   %Aus diesem Grund habe ich bereits erfolgreich einen GMP-Kurs absolviert, und finde ich die ausgeschriebene Position sehr reizvoll.
+%     \par }{}
+% \ifthenelse{\equal{\typ} {Produktion}}
+%     {Bereits in meiner Dissertationszeit war ich stark an konkreten Ergebnissen interessiert und ich möchte in meiner nächsten beruflichen Tätigkeit nicht nur Produkte entwickeln, sondern diese auch wirtschaftlich produktiv zum Einsatz bringen. Aus diesem Grund habe ich bereits erfolgreich einen GMP-Kurs absolviert, und finde ich die ausgeschriebene Position sehr reizvoll.\par }{}
+% \ifthenelse{\equal{\typ} {QA}}
+%     {Während meiner Forschungstätigkeit habe ich umfangreiche Erfahrungen in der chemischen und biochemischen Analytik gesammelt. Diese Kenntnisse haben mir gezeigt, wie entscheidend Qualitätssicherung in der Chemieindustrie ist, um hochwertige und sichere Produkte zu gewährleisten. Aus diesem Grund habe ich bereits erfolgreich einen GMP-Kurs absolviert. Ich bin davon überzeugt, dass meine wissenschaftliche Expertise und meine Fähigkeit zur Problemlösung eine wertvolle Bereicherung für Ihr Quality Assurance Team darstellen werden. Ich freue mich darauf, mich schnell in diese neue Rolle einzuarbeiten und zur Qualitätssicherung in Ihrem Unternehmen beizutragen.\par }{}
+% \ifthenelse{\equal{\typ} {QM}}
+%     {Während meiner Forschungstätigkeit konnte ich umfangreiche Erfahrungen in der chemischen und biochemischen Analytik sammeln. Diese Erkenntnisse haben mir verdeutlicht, wie essenziell Qualitätsmanagement in der Chemieindustrie ist, um hochwertige und sichere Produkte zu gewährleisten. In diesem Zusammenhang habe ich bereits erfolgreich an einem GMP-Kurs teilgenommen. Ich bin fest davon überzeugt, dass meine wissenschaftliche Expertise und meine Fähigkeit zur Problemlösung eine wertvolle Bereicherung für Ihr Qualitätsmanagement Team darstellen werden. Ich freue mich darauf, mich zügig in diese neue Rolle einzuarbeiten und zur Qualitätssteigerung in Ihrem Unternehmen beizutragen.\par }{}
+% \ifthenelse{\equal{\typ} {QMMang}}
+%     {Während meiner Forschungstätigkeit konnte ich umfangreiche Erfahrungen in der chemischen und biochemischen Analytik sammeln. Diese Erkenntnisse haben mir verdeutlicht, wie essenziell Qualitätsmanagement in der Chemieindustrie ist, um hochwertige und sichere Produkte zu gewährleisten. In diesem Zusammenhang habe ich bereits erfolgreich an einem GMP-Kurs teilgenommen, und ich konnte meine Fähigkeit zur effektiven Projektplanung \mbox{und -durchführung} ich bei der Leitung des Fortgeschrittenen Praktikums ''Organische Chemie'' demonstrieren. Für diese einmonatige Blockveranstaltung musste ich eigenverantwortlich Chemikalien, Laborausrüstung und Aktivitäten der Betreuer koordinieren. Ich bin fest davon überzeugt, dass meine wissenschaftliche Expertise und meine Fähigkeit zur Problemlösung eine wertvolle Bereicherung für Ihr Qualitätsmanagement Team darstellen werden. Ich freue mich darauf, mich zügig in diese neue Rolle einzuarbeiten und zur Qualitätssteigerung in Ihrem Unternehmen beizutragen.\par }{}
+% \ifthenelse{\equal{\typ} {ManagementSicherheit}}
+%     {Bereits in meiner Dissertationszeit konnte ich mich beim Umgang mit teils höchst kritischen biologischen Substanzen mit dem Problemkomplex des sicherheitskritischen Arbeitens aus Anwederperspektive intensiv auseinandersetzen. Außerdem haben mich Sicherheitsaspekte, die ich in allen betreuten Laborpraktika den Studierenden vermitteln, und in den eigenständig geplanten teilweise selbst erarbeiten oder zumindest pflegen musste, stets fasziniert. Daher finde ich die ausgeschriebene Stelle sehr reizvoll. \par }{}
 
-% Bereits in meiner Dissertation war ich stark an konkreten Ergebnissen interessiert und ich möchte in meiner nächsten beruflichen Tätigkeit nicht nur Produkte herstellen, sondern diese auch auf den Markt begleiten, weswegen ich die ausgeschriebene Position sehr reizvoll finde.\par
-% Daher reizt mich die ausgeschriebene Stelle sehr, da sie diese beiden Aspekte vereint.\par
-% Im Verlauf meiner Doktorarbeit konnte ich meine Begeisterung für hochspezifische und maßgeschneiderte Lösungen für komplexe Problemstellungen in der Chemie ausbauen.
+% \ifthenelse{\equal{\typ} {Marketing}}
+%     {Während meiner Doktorarbeit habe ich tiefgreifende Einblicke in komplexe wissenschaftliche Prozesse erhalten und gelernt, wie wichtig es ist, wissenschaftliche Erkenntnisse erfolgreich in der akademischen Welt zu etablieren. Diese Erfahrung hat mir verdeutlicht, wie entscheidend der Bereich Market Access ist, um Produkte in der pharmazeutischen und chemischen Industrie erfolgreich zu vermarkten und sicherzustellen, dass sie den Bedürfnissen der Zielgruppen gerecht werden.\par}{}
 
 
-% Derzeit bin ich in der Endphase meiner Dissertation, die ich voraussichtlich im Juni 2022 abschließen werde. Ich arbeite im Bereich der Kristallografie von Proteinen unter der Leitung von Prof. Plattner \& Prof. Friedrich an den Instituten für organische Chemie und Biochemie. Dieses breite Spektrum an Arbeitsgebieten stellt eine gute Grundlage für die ausgeschriebene Stelle im Bereich des Marketingmanagements dar, da ich bereits heute schon für sehr unterschiedliche Fragestellungen Lösungswege erarbeite.\par
+% \ifthenelse{\equal{\typ} {Lehre}}
+%     {Während meiner Dissertation konnte ich mich intensiv mit verschiedenen Techniken der Biochemie und der Analytik auseinandersetzen. }
+%     {Im Verlauf der Dissertation konnte ich mich tiefgehend mit einer Reihe von Techniken und Methoden der Molekularbiologie, Mikrobiologie, Proteinbiochemie und der Großmolekularkristallografie auseinandersetzen. Besonders hervorzuheben ist dabei meine Erfahrung 
+%     mit Agarose-Gelelektrophorese, SDS-PAGE Elektrophorese und Proteinreinigungsmethoden mittels Äkta-Chromatografie sowie der hochauflösenden Röntgenkristallografie zur Strukturbestimmung von Großmolekülen.}
+% Mein Interesse reicht allerdings weit über den reinen Fachbereich hinaus und ich bilde mich selbst aktiv weiter. So habe ich mich neben verschiedenen fachspezifischen Fortbildungen \ifthenelse{\equal{\typ} {Lehre}}{}{wie den bereits erwähnten \textit{GMP} und \textit{Sicherheit in der Gentechnik} }bereits mit BWL und Projektmanagement beschäftigt. Ich habe außerdem eine hohe IT-Affinität und kenne mich mit unterschiedlichen Software-Tools bestens aus. Es ist unausweichlich, sich während der Dissertation neben fundiertem Fachwissen auch solide Kenntnisse in der Informations- und Datenverarbeitung zu erarbeiten.
+% \ifthenelse{\equal{\typ}{Lehre}}{Ein nicht unwesentlicher Teil meiner Lehrtätigkeit fiel in die Pandemie und war von den entsprechenden Einschränkungen betroffen. Daher verfüge ich über umfassende Kenntnisse digitaler Lehr- und Präsentationstechniken. Auch der Bereich Social-Media und digitale Medien interessiert mich sehr, und ich habe darin auch schon umfassende Erfahrung im privaten Bereich gesammelt.}{}\par 
 
-%Es folgt dem Weg, den ich bereits im Laufe meines Studiums eingeschlagen hatte, in dem ich mich bereits mit angewandter und mit organischer Chemie beschäftigen konnte.\par
-% Zu Beginn meiner Dissertation bei Herrn Prof. Plattner ergab sich leider das Problem, dass die eigentlich eingeplanten Proteine für die Kristallografie nicht verfügbar waren. Durch meine Sozialkompetenz und meine Eigeninitiative konnte ich schließlich den Kontakt zu Prof. Friedrich herstellen, der mir die Möglichkeit gab, in seiner Gruppe die benötigten Proteine selbst herzustellen. Dabei hatte ich außerdem die Gelegenheit, mich mit der Unterstützung seiner kompetenten Mitarbeiter eigenständig in ein für mich sehr neues und ungewohntes Gebiet einzuarbeiten.\par
-% Im Verlauf der Dissertation hatte ich die Gelegenheit, mich tiefgehend mit einer Reihe von Techniken und Methoden der Molekularbiologie und der Großmolekularkristallografie auseinander zu setzen. Besonders hervorzuheben ist dabei XXX, aber auch YYY und ZZZ\par
-%    \ifthenelse{\equal{\typ} {QA} \or \equal{\typ} {QM} \or \equal{\typ} {Marketing}}
-%        {mit der PCR selbst, insbesondere der ortsspezifischen Mutagenese, sowie verschiedener Vorbereitungs- und Aufbereitungsprozesse wie DNA-Extraktion, Agarose-Gelelektrophorese und Transformation \& Kultivierung von \textit{E. coli}.}
-\ifthenelse{\equal{\typ} {Lehre}}
-    {Während meiner Dissertation konnte ich mich intensiv mit verschiedenen Techniken der Biochemie und der Analytik auseinandersetzen. }
-    {Im Verlauf der Dissertation konnte ich mich tiefgehend mit einer Reihe von Techniken und Methoden der Molekularbiologie, Mikrobiologie, Proteinbiochemie und der Großmolekularkristallografie auseinandersetzen. Besonders hervorzuheben ist dabei meine Erfahrung 
-    mit Agarose-Gelelektrophorese, SDS-PAGE Elektrophorese und Proteinreinigungsmethoden mittels Äkta-Chromatografie sowie der hochauflösenden Röntgenkristallografie zur Strukturbestimmung von Großmolekülen.}
-Mein Interesse reicht allerdings weit über den reinen Fachbereich hinaus und ich bilde mich selbst aktiv weiter. So habe ich mich neben verschiedenen fachspezifischen Fortbildungen \ifthenelse{\equal{\typ} {Lehre}}{}{wie den bereits erwähnten \textit{GMP} und \textit{Sicherheit in der Gentechnik} }bereits mit BWL und Projektmanagement beschäftigt. Ich habe außerdem eine hohe IT-Affinität und kenne mich mit unterschiedlichen Software-Tools bestens aus. Es ist unausweichlich, sich während der Dissertation neben fundiertem Fachwissen auch solide Kenntnisse in der Informations- und Datenverarbeitung zu erarbeiten.
-\ifthenelse{\equal{\typ}{Lehre}}{Ein nicht unwesentlicher Teil meiner Lehrtätigkeit fiel in die Pandemie und war von den entsprechenden Einschränkungen betroffen. Daher verfüge ich über umfassende Kenntnisse digitaler Lehr- und Präsentationstechniken. Auch der Bereich Social-Media und digitale Medien interessiert mich sehr, und ich habe darin auch schon umfassende Erfahrung im privaten Bereich gesammelt.}{}\par 
-% Mein Interesse reicht auch über den reinen Fachbereich hinaus, und ich bilde mich selbst aktiv weiter. So habe ich mich neben verschiedenen fachspezifischen Fortbildungen wie GMP und Sicherheit in der Gentechnik bereits mit BWL und Projektmanagement beschäftigt.\par
-
-Ein anschauliches Beispiel meiner lösungsorientierten Philosophie ist ein Problem, das sich zu Beginn meiner Dissertation bei Herrn Professor Plattner ergab: Die ursprünglich eingeplanten Proteine für die Kristallografie waren nicht verfügbar. Durch meine Sozialkompetenz und meine Eigeninitiative konnte ich schließlich den Kontakt zu Professor Friedrich herstellen, der mir die Möglichkeit gab, in seiner Gruppe die benötigten Proteine selbst herzustellen. Dabei hatte ich außerdem die Gelegenheit, mich mit der Unterstützung seiner kompetenten Mitarbeiter eigenständig in ein für mich sehr neues und ungewohntes Gebiet einzuarbeiten.\par
+% Ein anschauliches Beispiel meiner lösungsorientierten Philosophie ist ein Problem, das sich zu Beginn meiner Dissertation bei Herrn Professor Plattner ergab: Die ursprünglich eingeplanten Proteine für die Kristallografie waren nicht verfügbar. Durch meine Sozialkompetenz und meine Eigeninitiative konnte ich schließlich den Kontakt zu Professor Friedrich herstellen, der mir die Möglichkeit gab, in seiner Gruppe die benötigten Proteine selbst herzustellen. Dabei hatte ich außerdem die Gelegenheit, mich mit der Unterstützung seiner kompetenten Mitarbeiter eigenständig in ein für mich sehr neues und ungewohntes Gebiet einzuarbeiten.\par
 
 
-% Meine G.V.I. liegen bei ca. 65.000~\euro{} und 
-\ifdefempty{\gehalt}{}{Meine Gehaltsvorstellungen liegen bei ca. \gehalt.000~\euro{} auf Basis einer 40h Woche \`a zwölf Gehältern. }
-\ifdefempty{\eintritt}{}{Da inzwischen meine Dissertation abgeschlossen ist und meine Pflichten an der Universität Freiburg erfüllt sind kann ich eine neue Stelle umgehend antreten.}  
-    % Da ich derzeit noch mit der Ausarbeitung meiner Dissertation ausgelastet bin, kann ich eine neue Stelle erst ab \eintritt{} antreten. }
-Ich freue mich darauf, \IfSubStr{\firmaText}{ihrer Mandantin}{Vertreter ihrer Mandantin}{Sie} bei einem Bewerbungsgespräch persönlich von mir und meinen Fähigkeiten zu überzeugen.
-% \ifthenelse{\equal{\typ}{Management}}{Gerade bei Zucht von Proteinen wird neben Fachkompetenz auch exakte Einhaltung von Methoden verlangt, \textEnde}{}
-\par\vspace{0.25em}
-% Sollten Sie noch weitere Unterlagen benötigen, reiche ich Ihnen diese gerne nach.
+% \ifdefempty{\gehalt}{}{Meine Gehaltsvorstellungen liegen bei ca. \gehalt.000~\euro{} auf Basis einer 40h Woche \`a zwölf Gehältern. }
+% \ifdefempty{\eintritt}{}{Da inzwischen meine Dissertation abgeschlossen ist und meine Pflichten an der Universität Freiburg erfüllt sind kann ich eine neue Stelle umgehend antreten.}  
+% Ich freue mich darauf, \IfSubStr{\firmaText}{ihrer Mandantin}{Vertreter ihrer Mandantin}{Sie} bei einem Bewerbungsgespräch persönlich von mir und meinen Fähigkeiten zu überzeugen.
+% \par\vspace{0.25em}
 
-% \newline
 
-% \begin{itemize}
-%     \item Organisation Organik-praktikum -> interdisziplinäre Management-erfahrung, 
-%     \item Corona -> Lehre online
-%     \item Kooperation Friedrich, eigenständiges einarbeiten in neuen Forschungsbereich
-%     \item Selbstständige Problemlösung-> Akquise neuer Kooperationspartner
-%     \item Weiterbildungen
-%     \begin{itemize}
-%         \item BWL
-%         \item Management
-%     \end{itemize}
-%     \item Sicherheit Gentechnik
-%     \item GMP
-
-% \end{itemize}
 
 \makeletterclosing
-
+\pagebreak
 % }
 
 

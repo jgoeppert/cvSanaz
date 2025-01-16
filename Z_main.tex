@@ -38,7 +38,7 @@
 %\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
 %\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
-\usepackage[ngerman]{babel}
+\ifthenelse {\equal{\english}{\empty}}{\usepackage[ngerman]{babel}}{\usepackage[english]{babel}}
 \usepackage[official]{eurosym}
 \usepackage{emerald}
 % \usepackage{arabtex}
@@ -79,8 +79,8 @@
 
 \input{sections/stelleNow.tex}
 \stelle{\stelleHead}
-% \input{letters/letterOpening.tex}
-% \input{letters/standardLetter.tex}
+\input{letters/letterOpening.tex}
+\input{letters/standardLetter.tex}
 \input{sections/cv-MAIN.tex}
 
 

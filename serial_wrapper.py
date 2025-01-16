@@ -33,7 +33,8 @@ print(args)
 
 # quit()
 
-url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-JxpwsP1t5ceEK4esRpF32rTx1J5ztuvQvcmxEzMEAXzuYuODILMYWIbjiPvhErubapziUV4XbNxH/pub?gid=0&single=true&output=csv'
+# url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-JxpwsP1t5ceEK4esRpF32rTx1J5ztuvQvcmxEzMEAXzuYuODILMYWIbjiPvhErubapziUV4XbNxH/pub?gid=0&single=true&output=csv'
+url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSXGqa-Qi0ttAtep3PKPSNPDAyc0XhMfyVZhBc5ZJ5j6uDT4zEjqxCe_7U0xVEQBgr9X4u5k7zCxW5d/pub?output=csv'
 print(url)
 # df = pd.read_excel(r'./Sanaz Bewerbungen.xlsx',dtype=str)
 # df = pd.read_csv(r,dtype=str)
