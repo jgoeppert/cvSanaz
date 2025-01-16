@@ -3,7 +3,7 @@
 *.log
 *.fls
 *.fdb_latexmk
-.p_env
+.p_venv
 *.out
 *.synctex.gz
 
