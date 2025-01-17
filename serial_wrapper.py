@@ -1,4 +1,4 @@
-#!python3
+#!python
 
 import pandas as pd
 import os
