@@ -42,8 +42,10 @@
     \let\oldAd\adresse
     \def\adresse{\kontakt \par \oldAd}
     \ifthenelse{ \equal{\geschlecht} {Herr}}
-        {\def\anrede{Sehr geehrter \geschlecht~\titleName}}
-        {\def\anrede{Sehr geehrte \geschlecht~\titleName}}
+        {\def\anrede{\ifthenelse {\equal{\english}{\empty}}{Sehr geehrter Herr}{Dear Mr.}\titleName}}
+        {\def\anrede{\ifthenelse {\equal{\english}{\empty}}{Sehr geehrte Frau}{Dear Ms.} \titleName}}
+        % {\renewcommand{\anrede}{\ifthenelse{ \equal{\english}{\empty} {Sehr geehrter Herr} {Dear Mr.}}  ~\kontakt}}
+        % {\renewcommand{\anrede}{\ifthenelse{ \equal{\english}{\empty} {Sehr geehrte Frau}  {Dear Mrs.}} ~\kontakt}}
 
 }
 

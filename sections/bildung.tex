@@ -1,17 +1,29 @@
+
+
+\hyphenation{Ana-ly-se}
+
 \ifthenelse {\equal{\english}{\empty}}{\section{Bildungsweg}}{\section{Education}}
 \ifthenelse {\equal{\english}{\empty}}{\subsection{Studium}}{\subsection{Higher Education}}
 \ifthenelse {\equal{\english}{\empty}}{
   \cventry{01/10 -- heute}{Dissertation Mikrosystemtechnik - Mikroelektronik}{Prof. Dr.-Ing. Yiannos Manoli}{Universität Freiburg}{}{}  % arguments 3 to 6 can be left empty
-  \cventry{10/04 -- 12/09}{Dipl.-Ing. Mikrosystemtechnik}{Universität Freiburg}{}{\textit{Note 1,8}}{}  % arguments 3 to 6 can be left empty
+  \cventry{10/04 -- 12/09}{Dipl.-Ing. Mikrosystemtechnik}{Universität Freiburg,}{}{\textit{Note 1,8}}{}  % arguments 3 to 6 can be left empty
   \cvitem{}{Diplomarbeit: \emph{Modellierung der Signalflankenform und Entwurf einer statistischen Timing Analyse digitaler CMOS Schaltungen im Subthresholdbereich}}
   }{
-  \cventry{01/10 -- today}{Dissertation Microsystems Engineering - Microelectronics}{Prof. Dr.-Ing. Yiannos Manoli}{University of Freiburg}{}{}  % arguments 3 to 6 can be left empty  
+  \cventry{01/10 -- Present}{Dissertation Microsystems Engineering - Microelectronics}{Prof. Dr.-Ing. Yiannos Manoli}{University of Freiburg}{}{}  % arguments 3 to 6 can be left empty  
   \cventry{10/04 -- 12/09}{Dipl.-Ing. Microsystems Engineering}{University of Freiburg}{}{\textit{Grade 1,8}}{}  % arguments 3 to 6 can be left empty
   \cvitem{}{Thesis: \emph{Modellierung der Signalflankenform und Entwurf einer statistischen Timing Analyse digitaler CMOS Schaltungen im Subthresholdbereich}}
 }
 % \cvitem{Prüfer}{Prof. Dr.-Ing. Y. Manoli, Prof. Dr.-Ing. L. Reindl,}
 % \cvitem{Note}{1,0}
 \ifthenelse {\equal{\english}{\empty}}{\subsection{Schulbildung}}{\subsection{Secondary Education}}
-\cventry{09/01 -- 06/04}{Allgemeine Hochschulreife}{IBG -- Technisches Gymnasium}{Lahr}{\textit{Note 1,7}}{}
-\cventry{09/95 -- 06/01}{Mittlere Reife}{Kooperatives Bildungszentrum -- Realschule}{Seelbach}{\textit{Note 2,7}}{}
+
+\ifthenelse {\equal{\english}{\empty}} {
+  \def\gradeAbi {Note 1,7}
+  \def\gradeReal{Note 2,7}
+}{
+  \def\gradeAbi {Grade 1.7}
+  \def\gradeReal{Grade 2.7}
+}
+\cventry{09/01 -- 06/04}{Allgemeine Hochschulreife} {IBG -- Technisches Gymnasium}              {Lahr,}      {\textit{\gradeAbi}}{}
+\cventry{09/95 -- 06/01}{Mittlere Reife}            {Kooperatives Bildungszentrum -- Realschule}{Seelbach,}  {\textit{\gradeReal}}{}
 

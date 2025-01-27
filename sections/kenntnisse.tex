@@ -1,14 +1,28 @@
+\ifthenelse {\equal{\english}{\empty}}{\section{Kenntnisse \& Fähigkeiten}}{\section{Skills}}
+% Kenntnisse \& Fähigkeiten
+\cvitem{\ifthenelse {\equal{\english}{\empty}}{Sprachen}{Languages}}{VHDL, (System)Verilog, Python, TCL, Shellscripts \LaTeX}
+% \cvitem{\ifthenelse {\equal{\english}{\empty}}{Sprachen}{Languages}}{VHDL, (System)Verilog, Python, TCL, Shellscripts, C, Assemblerو  \LaTeX}
+% \cvitem{}{\ifthenelse {\equal{\english}{\empty}}{Deutsch (Muttersprache)}{german (native speaker)}}
+% \cvitem{}{\ifthenelse {\equal{\english}{\empty}}{Englisch (verhandlungssicher)}{english (business fluent)}}
+\cvitem{}{\ifthenelse {\equal{\english}{\empty}}{Deutsch (Muttersprache)}{german (native speaker)}{\ifthenelse {\equal{\english}{\empty}}{Englisch (verhandlungssicher)}{english (business fluent)}}}
+% \cvitem{Sprachen}{VHDL, Verilog, Python, TCL, shellscripts, C, Assembler, Matlab, Mathematica}
+% \cvitem{Skriptsprachen}{Python, Java, Matlab, Mathematica}
+% \cvitem{Sprachen}{C, Assembler}
+\cvitem{IC Digital}{Cadence: Genus, Innovus, Voltus, Tempus; Synopsys Design Compiler; Xilinx Vivado}
+\cvitem{IC Analog}{Cadence Virtuoso, Spectre, AMS, Ocean, Skill, \ifthenelse {\equal{\english}{\empty}}{Layouterfahrung}{Layout experience}}
+\cvitem{\ifthenelse {\equal{\english}{\empty}}{Elektronik}{Electronics}}{(p)Spice, KiCAD, Altium Designer}
+\cvitem{OS}{Mircosoft Windows (95 bis 10), Linux (\ifthenelse {\equal{\english}{\empty}}{verschiedene Distributionen}{various distributions})}
+% \cvitem{Office}{Mircosoft Office (Word, Excel, PowerPoint), \LaTeX}
+% \section{Management \& Administration}
+\ifthenelse {\equal{\english}{\empty}}{\cvitem{Verwaltung}{Projektmanagement}}{\cvitem{Administration}{Project Management, Software Version Control (GIT)}}
+% \cvitem{}{Förderlandschaft Deutschland \& EU}
 
-\section{Kenntnisse \& Fähigkeiten}
-% \subsection{Sprachen}
-\cvitem{\bfseries Sprachen}{Persisch (Muttersprache) - Deutsch (verhandlungssicher) } %\\ Englisch (erweiterte Kenntnisse)}
-% \cvitem{}{Deutsch (verhandlungssicher)}
-\cvitem{}{Englisch (erweiterte Kenntnisse)}
-% \cvitem{Englisch}{erweiterte Kenntnisse}
-
-
-
-\cvitem{\bfseries Software-Tools}{CCP4, COOT, Pymol, OriginPro, ChemDraw, MS-Office}
-
+% \section{Veröffentlichungen}
+% \cvitem{BioCAS'23}{A Novel 130.1 pJ/decision
+% Binary Tree Ensemble Classifier for an Energy Efficient Atrial Fibrillation Detecting
+% ECG Processing System in 22nm FDSOI (Erstautor: Alexander Bleitner)}
+% \cvitem{ESSCIRC'19}{Area-Constrained Multi-Source Power Management for Thermoelectric Energy Harvestin}
+% \cvitem{JSSC'16}{Fully Integrated Startup at 70 mV of Boost Converters for Thermoelectric Energy Harvesting}
+% \cvitem{DATE'10}{Timing Modeling for Digital Sub-Threshold Circuits (Erstautor: Niklas Lotze)}
 
 

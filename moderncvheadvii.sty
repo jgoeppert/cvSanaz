@@ -197,7 +197,7 @@
   % opening
 
 %   \textbf{\@lettertitle ~als \@stelle}\\[.25em]
-\cvtitlestyle{\@lettertitle ~als \@stelle}\\[-1.em]
+\cvtitlestyle{\@lettertitle ~\@stelle}\\[-1.em]
 
   \raggedright%
   % \@opening\\[1em]%
@@ -282,7 +282,7 @@
     (name)
     {   \Large  \textbf{ \@firstname ~\@lastname\\ 
       \ifthenelse {\equal{\@stelle}{\empty}}{}{
-        \vspace{1ex}
+        \vspace{0.5ex}
         \small \ifthenelse {\equal{\english}{\empty}}{Angestrebte Position}{Desired Position}:\\
         \@stelle\\
         % \normalsize{Angestrebte Position} 
@@ -336,7 +336,7 @@
             \end{tabular}
         };
 \end{tikzpicture}
-% \vspace*{-4em}
+\vspace*{2em}
 % }
 
 % \usebox{\headerbox}

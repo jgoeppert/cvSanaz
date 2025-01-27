@@ -53,8 +53,8 @@
 {
     \renewcommand{\adresse}{\kontakt \\ \anschrift}
     \ifthenelse{ \equal{\geschlecht} {Herr}}
-        {\renewcommand{\anrede}{Sehr geehrter \geschlecht~\kontakt}}
-        {\renewcommand{\anrede}{Sehr geehrte \geschlecht~\kontakt}}
+        {\renewcommand{\anrede}{\ifthenelse{ \equal{\english}{\empty} {Sehr geehrter Herr} {Dear Mr.}}  ~\kontakt}}
+        {\renewcommand{\anrede}{\ifthenelse{ \equal{\english}{\empty} {Sehr geehrte Frau}  {Dear Mrs.}} ~\kontakt}}
 
 }
 % {
