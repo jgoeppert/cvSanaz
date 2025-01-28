@@ -128,7 +128,7 @@ def replaceStringChars(strIn):
 
 def processPDF(bewerbung):
     # input(bewerbung['firma'])
-    name = 'Sanaz_Goeppert-A'
+    name = 'Goeppert_Jacob'
     bewPath = '%03d_%s_%s' % (int(bewerbung[fields[0]]), bewerbung['firma'], bewerbung['stelleText'][:9])
     bewPath = replacePathChars(bewPath)
     # bewName = replacePathChars('%s_%s' % (bewerbung['firma'],bewerbung['stelle Original']))
@@ -154,7 +154,7 @@ def processPDF(bewerbung):
     pdfReader = PdfReader(open(targetF, "rb"))
     pdfWriter = PdfWriter()
     # fName = os.path.join(target,'Anschreiben_' + bewName + '.pdf')
-    tf = 'Bewerbungsschreiben_' + name + '_' + bewerbung['stelleText']
+    tf = 'CoverLetter_' + name + '_' + bewerbung['stelleText']
     tf = replacePathChars(tf)
     print(tf)
     targetF=os.path.join(target, tf)
@@ -165,7 +165,7 @@ def processPDF(bewerbung):
     pdfWriter = PdfWriter()
     # fName = os.path.join(target,'Lebenslauf_' + bewName + '.pdf')
     # fName = target + '_Lebenslauf.pdf'
-    tf = 'Lebenslauf_' + name + '_' + bewerbung['stelleText']
+    tf = 'Resume_' + name + '_' + bewerbung['stelleText']
     tf = replacePathChars(tf)
     targetF=os.path.join(target, tf)
     fName=targetF + '.pdf'
