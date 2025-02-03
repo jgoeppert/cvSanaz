@@ -163,6 +163,7 @@ def processPDF(bewerbung):
     for page in range(0,1) : pdfWriter.add_page(pdfReader.pages[page])
     with open(fName,'wb') as f: pdfWriter.write(f) 
     pdfWriter = PdfWriter()
+    shutil.copyfile("{}.pdf".format(targetF),"cl.pdf")
     # fName = os.path.join(target,'Lebenslauf_' + bewName + '.pdf')
     # fName = target + '_Lebenslauf.pdf'
     tf = 'Lebenslauf_' + name + '_' + bewerbung['stelleText']
@@ -171,6 +172,8 @@ def processPDF(bewerbung):
     fName=targetF + '.pdf'
     for page in range(1,3) : pdfWriter.add_page(pdfReader.pages[page])
     with open(fName,'wb') as f: pdfWriter.write(f) 
+    print("REACH")
+    shutil.copyfile(fName,"cv.pdf")
     # pdfReader.close()
     # input(target)
     # upload_file_list = [tPath]
