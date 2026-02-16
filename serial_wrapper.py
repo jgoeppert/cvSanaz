@@ -128,7 +128,8 @@ def replaceStringChars(strIn):
 def processPDF(bewerbung):
     # input(bewerbung['firma'])
     name = 'Sanaz_Goeppert-A'
-    bewPath = '%03d_%s_%s' % (int(bewerbung[fields[0]]), bewerbung['firma'], bewerbung['stelleText'][:9])
+    if bewerbung['stelleText'] != '' : bewPath = '%03d_%s_%s' % (int(bewerbung[fields[0]]), bewerbung['firma'], bewerbung['stelleText'][:9])
+    else : bewPath = '%03d_%s' % (int(bewerbung[fields[0]]), bewerbung['firma'])
     bewPath = replacePathChars(bewPath)
     # bewName = replacePathChars('%s_%s' % (bewerbung['firma'],bewerbung['stelle Original']))
     # print(bewName)
@@ -162,6 +163,7 @@ def processPDF(bewerbung):
     for page in range(0,1) : pdfWriter.add_page(pdfReader.pages[page])
     with open(fName,'wb') as f: pdfWriter.write(f) 
     pdfWriter = PdfWriter()
+    shutil.copyfile("{}.pdf".format(targetF),"cl.pdf")
     # fName = os.path.join(target,'Lebenslauf_' + bewName + '.pdf')
     # fName = target + '_Lebenslauf.pdf'
     tf = 'Lebenslauf_' + name + '_' + bewerbung['stelleText']
@@ -170,6 +172,8 @@ def processPDF(bewerbung):
     fName=targetF + '.pdf'
     for page in range(1,3) : pdfWriter.add_page(pdfReader.pages[page])
     with open(fName,'wb') as f: pdfWriter.write(f) 
+    print("REACH")
+    shutil.copyfile(fName,"cv.pdf")
     # pdfReader.close()
     # input(target)
     # upload_file_list = [tPath]
