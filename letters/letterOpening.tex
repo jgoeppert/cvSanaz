@@ -16,7 +16,7 @@
 
 
 \def\kontakt{}
-\ifdefempty{\name}{\def\kontakt{}}{\def\kontakt{\name}}
+\ifdefempty{\nachname}{\def\kontakt{}}{\def\kontakt{\nachname}}
 \ifdefempty{\vorname}{}
     {
         \let\oldKonVor\kontakt
@@ -34,16 +34,18 @@
     }
 {}
 
-\ifdefempty{\titel}{\def\titleName{\name}}{\def\titleName{\titel~\name}}
+\ifdefempty{\titel}{\def\titleName{\nachname}}{\def\titleName{\titel~\nachname}}
 
+\let\oldAd\adresse
+\def\adresse{\kontakt \par \oldAd}
 \ifdefempty{\geschlecht}{
-    \def\anrede{Sehr geehrte Damen und Herren}
+      \def\anrede{\ifthenelse {\equal{\english}{\empty}}{Sehr geehrte Damen und Herren}{Dear Sir or Madam}}
 }{
-    \let\oldAd\adresse
-    \def\adresse{\kontakt \par \oldAd}
     \ifthenelse{ \equal{\geschlecht} {Herr}}
-        {\def\anrede{Sehr geehrter \geschlecht~\titleName}}
-        {\def\anrede{Sehr geehrte \geschlecht~\titleName}}
+        {\def\anrede{\ifthenelse {\equal{\english}{\empty}}{Sehr geehrter Herr}{Dear Mr.~}\titleName}}
+        {\def\anrede{\ifthenelse {\equal{\english}{\empty}}{Sehr geehrte Frau}{Dear Ms.~} \titleName}}
+        % {\renewcommand{\anrede}{\ifthenelse{ \equal{\english}{\empty} {Sehr geehrter Herr} {Dear Mr.}}  ~\kontakt}}
+        % {\renewcommand{\anrede}{\ifthenelse{ \equal{\english}{\empty} {Sehr geehrte Frau}  {Dear Mrs.}} ~\kontakt}}
 
 }
 
@@ -75,34 +77,12 @@
         }
     }
 
+    \ifthenelse {\equal{\english}{\empty}}
+      {}
+      {\def\firmaText{at \firmaSatz}}
+
+    % \def\firmaText{at \firmaSatz}
+
 \ifdefempty{\textEnde}{\def\textEnde{was bei Ihrer Firma mit ISO-Normen in Verbindung steht.}}
-
-
-
-% {
-%     \providecommand{\adresse}{\kontakt \\ \anschrift}
-%     \ifthenelse{ \equal{\geschlecht} {Herr}}
-%         {\providecommand{\anrede}{Sehr geehrter \geschlecht~\kontakt}}
-%         {\providecommand{\anrede}{Sehr geehrte \geschlecht~\kontakt}}
-
-% }
-
-
-% \providecommand{\adresse}{}
-% \providecommand*{\anrede}{}
-
-% \recipient{\firma{}}{\adresse{}}
-% \opening{\anrede{},}
-
-
-
-%%%%%%%%%%%%%%% MANUELL
-% \renewcommand{\stelleText}{Biochemikerin für Proteinanalytik}
-% \renewcommand{\firma}{Phadia GmbH}
-% \renewcommand{\anschrift}{Munzinger Straße 7\\79111 Freiburg im Breisgau}
-
-% \renewcommand{\adresse}{\anschrift}
-% \renewcommand{\anrede}{Sehr geehrte Damen und Herren}
-
 
 

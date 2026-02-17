@@ -188,7 +188,7 @@
     \raggedright%
     \addressfont%
     {\bfseries\upshape\@recipientname}\\%
-    \@recipientaddress  % 
+    \@recipientaddress%
   \end{minipage}
   % date
   \hfill% US style
@@ -197,9 +197,7 @@
   % opening
 
 %   \textbf{\@lettertitle ~als \@stelle}\\[.25em]
-\ifthenelse{\equal{\customTitle}{\empty}}
-  {\cvtitlestyle{\@lettertitle~\@stelle}\\[-1.em]}
-  {\cvtitlestyle{\@lettertitle}\\[-1.em]}
+\cvtitlestyle{\@lettertitle ~\@stelle}\\[-1.em]
 
   \raggedright%
   % \@opening\\[1em]%
@@ -282,12 +280,7 @@
         % rounded rectangle, rounded rectangle west arc = 0pt
         ]%
     (name)
-    {   \Large  \textbf{ 
-      % Dr. rer. nat. \@firstname ~\@lastname\\ 
-      \ifthenelse{\equal{\english}{\empty}}
-        {Dr. \@firstname ~\@lastname\\} 
-        % {Dr. rer. nat \@firstname ~\@lastname\\} 
-        {\@firstname ~\@lastname, PhD\\} 
+    {   \Large  \textbf{ \@firstname ~\@lastname\\ 
       \ifthenelse {\equal{\@stelle}{\empty}}{}{
         \vspace{0.5ex}
         \small \ifthenelse {\equal{\english}{\empty}}{Angestrebte Position}{Desired Position}:\\
@@ -311,7 +304,7 @@
     \coordinate[below= 1em of tmp] (tmp)  ;
     \node[anchor=north west, inner sep  = 0] (tmp) at (tmp) {
         \begin{tabular}{>{\bfseries}p{\tabWidthHeaders}p{\tabWidthContent}}
-          \ifthenelse {\equal{\english}{\empty}}{Geboren am}{Birthday}              &  \ifthenelse {\equal{\english}{\empty}}{9. September 1988}{September 9, 1988}\\
+          \ifthenelse {\equal{\english}{\empty}}{Geboren am}{Birthday}              &  \ifthenelse {\equal{\english}{\empty}}{6. November 1984}{November 6'th, 1984}\\
           \ifthenelse {\equal{\english}{\empty}}{Familienstand}{Marital Status}     &  \ifthenelse {\equal{\english}{\empty}}{verheiratet}{married}\\
             \ifthenelse{\isundefined{\@staatsN}}    {}  {\ifthenelse {\equal{\english}{\empty}}{Staatsangeh\"origkeit}{Nationality}      & \@staatsN\\}%
             % \ifthenelse{\isundefined{\@staatsF}}    {}  {                           & \@staatsF \\}% \\
@@ -335,7 +328,7 @@
             \ifthenelse{\isundefined{\@email}}          {}  {E-Mail                 &  \@email \\}% \\
             % \ifthenelse{\isundefined{\@socialsdetails}} {}  {Social Media           &  \@socialsdetails \\}% \\
             Social Media           &
-                \foreach \n in {0,...,1}{
+                \foreach \n in {0,...,0}{
                     \csname\collectiongetkey{socials}{\n}socialsymbol\endcsname
                     \collectiongetitem{socials}{\n}
                     \newline
@@ -343,7 +336,7 @@
             \end{tabular}
         };
 \end{tikzpicture}
-% \vspace*{1em}
+\vspace*{2em}
 % }
 
 % \usebox{\headerbox}

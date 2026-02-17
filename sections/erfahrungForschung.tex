@@ -1,63 +1,124 @@
 
 \def\protein{0}
 \def\kristallographie{0}
+\ifthenelse {\equal{\english}{\empty}}{
 
-\section{Berufserfahrung}
-%\subsection{Vocational}
+  \section{Berufserfahrung}
+  %\subsection{Vocational}
 
-\cventry{01/2024 --- Heute }{Wissenschaftlicher Mitarbeiter (Postdoc)}{Fakultät für Physiologie, Albert-Ludwigs Universität Freiburg}{}{}{}
-  \cvitem{}{\bfseries Projektmanagement im Rahmen der Forschungscluster \textit{nanodiagBW} und \textit{nEOdiag}}
-% \begin{itemize}
-  \cvlistitem{Strukturierung übergeordneter Anforderungen zur Erstellung konkreter Handlungspläne}
-  % \cvlistitem{Durchführung regelmäßiger interner Präsentationen zur Fortschrittskontrolle}
-  \cvlistitem{Erstellung und Präsentation von Berichten und Analysen für externe Partner und Stakeholder im Konsortium; regelmäßige interne Präsentationen}
-  \cvitem{}{\bfseries Etablierung neuer Methoden und Protokolle zur Aerolysin-Proteinsynthese}
-  \cvlistitem{In-vivo: orthogonales tRNA System}
-  \cvlistitem{In-vitro: mittels acetylated tRNA oder \textit{E.coli}-basierter zellfreier Expression}
-  % \cvlistitem{Labeling mit Fluorophor }
+  \cventry{01/2024 --- Heute }{Wissenschaftlicher Mitarbeiter (Postdoc)}{Fakultät für Physiologie, Albert-Ludwigs Universität Freiburg}{}{}{}
+  %   \cvitem{}{\bfseries Projektmanagement im Rahmen der Forschungscluster \textit{nanodiagBW} und \textit{nEOdiag}}
+  % % \begin{itemize}
+  %   \cvlistitem{Strukturierung übergeordneter Anforderungen zur Erstellung konkreter Handlungspläne}
+  %   % \cvlistitem{Durchführung regelmäßiger interner Präsentationen zur Fortschrittskontrolle}
+  %   \cvlistitem{Erstellung und Präsentation von Berichten und Analysen für externe Partner und Stakeholder im Konsortium; regelmäßige interne Präsentationen}
+  %   \cvitem{}{\bfseries Etablierung neuer Methoden und Protokolle zur Aerolysin-Proteinsynthese}
+  %   \cvlistitem{In-vivo: orthogonales tRNA System}
+  %   \cvlistitem{In-vitro: mittels acetylated tRNA oder \textit{E.coli}-basierter zellfreier Expression}
+  %   % \cvlistitem{Labeling mit Fluorophor }
+  %   % }
+  % % \end{itemize}
+
+  % \begin{itemize}}
+    %   \item Einkauf: Design von Ausgangsstoffen und Auswahl von und Kommunikation mit internationalen Lieferanten
+    %   \item Beschaffung von Laborressourcen
+    %   \item Monitoring des Projektstatus und Dokumentation
+    % \end{itemize}
   % }
-% \end{itemize}
+  \cventry{11/2023 --- 12/2023 }{Verkäuferin}{Bäckerei Armbruster}{}{}{}
+  \cventry{07/2017 --- 10/2023 }{Promotionsstelle}{Fakultät für Chemie und Pharmazie, Albert-Ludwigs Universität Freiburg}{}{}{}
+  \cvlistitem{Selbstständige Planung und Organisation des fortgeschrittenen Praktikums in organischer Chemie für Lehramt-Studenten}
 
-% \begin{itemize}}
-  %   \item Einkauf: Design von Ausgangsstoffen und Auswahl von und Kommunikation mit internationalen Lieferanten
-  %   \item Beschaffung von Laborressourcen
-  %   \item Monitoring des Projektstatus und Dokumentation
+  \cvlistitem{Molekularbiologie}
+  % \cvlistitem{Ortsspezifische Mutagenese durch PCR}
+  % \ifthenelse{\equal{\marketing}{1}}{
+  % \cvlistitem{Agarose-Gelelektrophorese}
+  % \cvlistitem{DNA-Extraktion}
+  % \cvlistitem{Transformation und Kultivierung von E.coli}
+
+  % }{}
+  \ifthenelse{\equal{\protein}{1}}{
+      \cvitem{}{\bfseries Proteinreinigung}
+      \cvlistitem{Chromatographie mit Äkta (IMAC, IEX, SEC)}
+      \cvlistitem{Bestimmung der Proteinkonzentration }
+      \cvlistitem{SDS-Page Elektrophorese}
+  }{
+    \cvlistitem{Proteinreinigung: Chromatographie mit Äkta, SDS-Page Elektrophorese}
+  }
+  % \cvitem{}{\bfseries Proteinkristallographie}
+  \ifthenelse{\equal{\kristallographie}{1}}{
+      \cvitem{}{\bfseries Proteinkristallographie}
+      \cvlistitem{Proteinkristallisation}
+      \cvlistitem{Kristalle fischen}
+      \cvlistitem{Datensätze sammeln}
+      \cvlistitem{Datensätze durch CCP4 und COOT prozessieren}
+      \cvlistitem{3D-Abbildungen mit Pymol erstellen}
+  }{
+      \cvlistitem{Proteinkristallographie --- Auswertung (CCP4, COOT) \& Aufbereitung (Pymol)}
+
+  }
+  \cventry{10/2014 --- 12/2016}{Chemielaborexpertin}{Patan Jame Factory (Textilfabrik), Teheran, Iran}{}{}{}
+
+  \cvlistitem{Test von Färbeprozessen (Farb- \& Stoffkombinationen) für die Produktion}
+
+}{
+  \section{Professional Experience}
+  %\subsection{Vocational}
+
+  \cventry{01/2024 --- Present }{Postdoctoral Research Associate  }{Faculty of Physiology, Albert-Ludwigs University of Freiburg}{}{}{}
+  \cvitem{}{\bfseries Internal project management within the framework of the research-cluster \mbox{\textit{nanodiagBW}} und \textit{nEOdiag}}
+  % \begin{itemize}
+    \cvlistitem{Structuring overarching requirements to develop concrete action plans}
+    % \cvlistitem{Durchführung regelmäßiger interner Präsentationen zur Fortschrittskontrolle}
+    \cvlistitem{Preparation and presentation of reports and analyses for external partners and stakeholders within the consortium; regular internal presentations}
+    \cvitem{}{\bfseries Establishment of new methods and protocols for Aerolysin protein synthesis}
+    \cvlistitem{In vivo: orthogonal tRNA system}
+    \cvlistitem{ In vitro: using acetylated tRNA or \textit{E.coli}-based cell-free expression systems}
+    % \cvlistitem{Labeling mit Fluorophor }
+    % }
   % \end{itemize}
-% }
-\cventry{11/2023 --- 12/2023 }{Verkäuferin}{Bäckerei Armbruster}{}{}{}
-\cventry{07/2017 --- 10/2023 }{Promotionsstelle}{Fakultät für Chemie und Pharmazie, Albert-Ludwigs Universität Freiburg}{}{}{}
-\cvlistitem{Selbstständige Planung und Organisation des fortgeschrittenen Praktikums in organischer Chemie für Lehramt-Studenten}
 
-\cvlistitem{Molekularbiologie}
-% \cvlistitem{Ortsspezifische Mutagenese durch PCR}
-% \ifthenelse{\equal{\marketing}{1}}{
-% \cvlistitem{Agarose-Gelelektrophorese}
-% \cvlistitem{DNA-Extraktion}
-% \cvlistitem{Transformation und Kultivierung von E.coli}
+  % \begin{itemize}}
+    %   \item Einkauf: Design von Ausgangsstoffen und Auswahl von und Kommunikation mit internationalen Lieferanten
+    %   \item Beschaffung von Laborressourcen
+    %   \item Monitoring des Projektstatus und Dokumentation
+    % \end{itemize}
+  % }
+  \cventry{11/2023 --- 12/2023 }{Sales Assistant}{Armbruster Bakery}{}{}{}
+  \cventry{07/2017 --- 10/2023 }{PhD Candidate}{Faculty of Chemistry and Pharmacy, Albert Ludwig University of Freiburg
+  }{}{}{}
+  \cvlistitem{Independent planning and organization of the advanced practical course in organic chemistry for teaching degree students}
 
-% }{}
-\ifthenelse{\equal{\protein}{1}}{
-    \cvitem{}{\bfseries Proteinreinigung}
-    \cvlistitem{Chromatographie mit Äkta (IMAC, IEX, SEC)}
-    \cvlistitem{Bestimmung der Proteinkonzentration }
-    \cvlistitem{SDS-Page Elektrophorese}
-}{
-  \cvlistitem{Proteinreinigung: Chromatographie mit Äkta, SDS-Page Elektrophorese}
+  \cvlistitem{Molecular biology}
+  % \cvlistitem{Ortsspezifische Mutagenese durch PCR}
+  % \ifthenelse{\equal{\marketing}{1}}{
+  % \cvlistitem{Agarose-Gelelektrophorese}
+  % \cvlistitem{DNA-Extraktion}
+  % \cvlistitem{Transformation und Kultivierung von E.coli}
+
+  % }{}
+  \ifthenelse{\equal{\protein}{1}}{
+      \cvitem{}{\bfseries Proteinreinigung}
+      \cvlistitem{Chromatographie mit Äkta (IMAC, IEX, SEC)}
+      \cvlistitem{Bestimmung der Proteinkonzentration }
+      \cvlistitem{SDS-Page Elektrophorese}
+  }{
+    \cvlistitem{Protein purification: chromatography with ÄKTA system, SDS-PAGE electrophoresis}
+  }
+  % \cvitem{}{\bfseries Proteinkristallographie}
+  \ifthenelse{\equal{\kristallographie}{1}}{
+      \cvitem{}{\bfseries Proteinkristallographie}
+      \cvlistitem{Proteinkristallisation}
+      \cvlistitem{Kristalle fischen}
+      \cvlistitem{Datensätze sammeln}
+      \cvlistitem{Datensätze durch CCP4 und COOT prozessieren}
+      \cvlistitem{3D-Abbildungen mit Pymol erstellen}
+  }{
+      \cvlistitem{Protein crystallography — data analysis (CCP4, COOT) \& visualization (Pymol)}
+
+  }
+  \cventry{10/2014 --- 12/2016}{Chemical Laboratory Expert}{Patan Jame Factory (Textile Factory), Tehran, Iran}{}{}{}
+
+  \cvlistitem{Testing of dyeing processes (color and fabric combinations) for production}
+  
 }
-% \cvitem{}{\bfseries Proteinkristallographie}
-\ifthenelse{\equal{\kristallographie}{1}}{
-    \cvitem{}{\bfseries Proteinkristallographie}
-    \cvlistitem{Proteinkristallisation}
-    \cvlistitem{Kristalle fischen}
-    \cvlistitem{Datensätze sammeln}
-    \cvlistitem{Datensätze durch CCP4 und COOT prozessieren}
-    \cvlistitem{3D-Abbildungen mit Pymol erstellen}
-}{
-    \cvlistitem{Proteinkristallographie --- Auswertung (CCP4, COOT) \& Aufbereitung (Pymol)}
-
-}
-\cventry{10/2014 --- 12/2016}{Chemielaborexpertin}{Patan Jame Factory (Textilfabrik), Teheran, Iran}{}{}{}
-
-\cvlistitem{Test von Färbeprozessen (Farb- \& Stoffkombinationen) für die Produktion}
-
-

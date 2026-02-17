@@ -55,7 +55,7 @@ fields=[
     'strasse',
     'geschlecht',
     'titel',
-    'name',
+    'nachname',
     'vorname',
     'typ',
     'gehalt',
@@ -64,6 +64,10 @@ fields=[
     'stelleHead',
     'artikelFirma',
     'textEnde',
+    'lang',
+    'customTitle',
+    'customHail',
+    'customText',
 ]
 
 def genStelleText(field,bewerbung):
@@ -72,7 +76,7 @@ def genStelleText(field,bewerbung):
         # print(bewerbung[field.index(field)])
         # print(bewerbung[field])
         val = str(bewerbung[field])
-        val = replaceStringChars(val)
+        if 'custom' not in val : val = replaceStringChars(val)
         print("%20s: %s", (field,val))
         writeString = '\def\\' + field + '{%s}\n' % val
         # if val == nan: val = ''
@@ -128,6 +132,7 @@ def replaceStringChars(strIn):
 def processPDF(bewerbung):
     # input(bewerbung['firma'])
     name = 'Sanaz_Goeppert-A'
+    if bewerbung['firma'] == 'blank' :     name = 'Sanaz_Goeppert-Asadollahpour'
     if bewerbung['stelleText'] != '' : bewPath = '%03d_%s_%s' % (int(bewerbung[fields[0]]), bewerbung['firma'], bewerbung['stelleText'][:9])
     else : bewPath = '%03d_%s' % (int(bewerbung[fields[0]]), bewerbung['firma'])
     bewPath = replacePathChars(bewPath)
@@ -141,7 +146,10 @@ def processPDF(bewerbung):
     # target=os.path.join(target, name)
     # extender = '\\\\?'
     # targetF=os.path.join(target,bewName)
-    tf = 'Bewerbung_' + name + '_' + bewerbung['stelleText']
+    if  bewerbung['lang'] != 'eng' :  app = 'Bewerbung'
+    else :                            app = 'Application'
+    tf = app + '_' + name
+    if bewerbung['firma'] != 'blank' : tf = tf + '_' + bewerbung['stelleText']
     print(bewerbung)
     tf = replacePathChars(tf)
     targetF=os.path.join(target, tf)
@@ -154,7 +162,10 @@ def processPDF(bewerbung):
     pdfReader = PdfReader(open(targetF, "rb"))
     pdfWriter = PdfWriter()
     # fName = os.path.join(target,'Anschreiben_' + bewName + '.pdf')
-    tf = 'Bewerbungsschreiben_' + name + '_' + bewerbung['stelleText']
+    if  bewerbung['lang'] != 'eng' :  cl = 'Bewerbungsschreiben'
+    else :                            cl = 'CoverLetter'
+    tf = cl + '_' + name
+    if bewerbung['firma'] != 'blank' : tf = tf + '_' + bewerbung['stelleText']
     tf = replacePathChars(tf)
     print(tf)
     targetF=os.path.join(target, tf)
@@ -166,7 +177,10 @@ def processPDF(bewerbung):
     shutil.copyfile("{}.pdf".format(targetF),"cl.pdf")
     # fName = os.path.join(target,'Lebenslauf_' + bewName + '.pdf')
     # fName = target + '_Lebenslauf.pdf'
-    tf = 'Lebenslauf_' + name + '_' + bewerbung['stelleText']
+    if  bewerbung['lang'] != 'eng' :  cv = 'Lebenslauf'
+    else :                            cv = 'Resume'
+    tf = cv + '_' + name
+    if bewerbung['firma'] != 'blank' : tf = tf + '_' + bewerbung['stelleText']
     tf = replacePathChars(tf)
     targetF=os.path.join(target, tf)
     fName=targetF + '.pdf'

@@ -11,16 +11,18 @@
 % \documentclass{article}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
 
-
-
+\include{sections/stelleNow.tex}
+\ifthenelse{\equal{\lang}{eng}}{\def\english{1}}{\def\english{}}
+% \def\english{1}
 
 
 % moderncv themes
 % \moderncvstyle[left]{casual}                             % style options are 
 \moderncvstyle{custom}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+% \moderncvstyle{classic}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
 \moderncvcolor{blue}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
 %\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
-%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+% \nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
 \usepackage{xstring}
 
 \usepackage{ragged2e}
@@ -36,10 +38,14 @@
 %\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
 %\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
-\usepackage[ngerman]{babel}
+% \ifthenelse {\equal{\english}{\empty}}{\usepackage[ngerman]{babel}}{\usepackage[english]{babel}}
+% \usepackage[ngerman]{babel}
+\usepackage[english]{babel}
 \usepackage[official]{eurosym}
 \usepackage{emerald}
 % \usepackage{arabtex}
+\usepackage{siunitx}
+
 
 \input{sections/personal}
 % to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
@@ -78,7 +84,9 @@
 \input{sections/stelleNow.tex}
 \stelle{\stelleHead}
 \input{letters/letterOpening.tex}
+\thispagestyle{empty}
 \input{letters/standardLetter.tex}
+\setcounter{page}{1}
 \input{sections/cv-MAIN.tex}
 
 
